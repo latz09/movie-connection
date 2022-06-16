@@ -17,7 +17,7 @@ export default function Home() {
 	};
 
 	useEffect(() => {
-		searchValue.length > 0 ? getMovieResults(searchValue) : '';
+		searchValue.length > 2 ? getMovieResults(searchValue) : '';
 	}, [searchValue]);
 
 	return (
@@ -32,20 +32,3 @@ export default function Home() {
 		</div>
 	);
 }
-
-// https://api.themoviedb.org/3
-//this set up will be good for details page
-//just dont make the url a search
-// export async function getServerSideProps() {
-// 	const res = await fetch(
-// 		`${server}/search/movie?api_key=${process.env.API_KEY}&language=en-US&query=Avengers&page=1`
-// 	);
-// 	const data = await res.json();
-// 	const movies = data.results;
-
-// 	return {
-// 		props: { movies },
-// 	};
-// }
-
-// https://api.themoviedb.org/3/movie/550?api_key=a2f0798c92ead2ff4fa893d6a9430867
