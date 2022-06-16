@@ -1,45 +1,28 @@
-import MainTitle from '../components/MainTitle';
-import MovieResults from '../components/userSearch/MovieResults';
+import { useState, useEffect } from 'react';
+import MainTitle from '../components/Hero';
+import MovieList from '../components/userSearch/MovieList';
 import SearchBar from '../components/userSearch/SearchBar';
+import { server } from '../config';
+import { getResults } from '../utils/getResults';
 
 export default function Home() {
-	const movieSearch = [
-		{
-			title: 'Toy Story',
-			year: '1995',
-			imbdID: 'tt0114709',
-			poster:
-				'https://m.media-amazon.com/images/M/MV5BMDU2ZWJlMjktMTRhMy00ZTA5LWEzNDgtYmNmZTEwZTViZWJkXkEyXkFqcGdeQXVyNDQ2OTk4MzI@._V1_SX300.jpg',
-		},
-		{
-			title: 'Toy Story 2',
-			year: '1999',
-			imbdId: 'tt0120363',
-			poster:
-				'https://m.media-amazon.com/images/M/MV5BMWM5ZDcxMTYtNTEyNS00MDRkLWI3YTItNThmMGExMWY4NDIwXkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_SX300.jpg',
-		},
-		{
-			title: 'Toy Story 3',
-			year: '2010',
-			imbdId: 'tt0435761',
-			poster:
-				'https://m.media-amazon.com/images/M/MV5BMTgxOTY4Mjc0MF5BMl5BanBnXkFtZTcwNTA4MDQyMw@@._V1_SX300.jpg',
-		},
-		{
-			title: 'Toy Story 2',
-			year: '1999',
-			imbdId: 'tt0120363',
-			poster:
-				'https://m.media-amazon.com/images/M/MV5BMWM5ZDcxMTYtNTEyNS00MDRkLWI3YTItNThmMGExMWY4NDIwXkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_SX300.jpg',
-		},
-		{
-			title: 'Toy Story 3',
-			year: '2010',
-			imbdId: 'tt0435761',
-			poster:
-				'https://m.media-amazon.com/images/M/MV5BMTgxOTY4Mjc0MF5BMl5BanBnXkFtZTcwNTA4MDQyMw@@._V1_SX300.jpg',
-		},
-	];
+	const [searchValue, setSearchValue] = useState('');
+	const [results, setResults] = useState([]);
+
+	const inputChangeHandler = (event) => {
+		setSearchValue(event.target.value);
+	};
+	const getMovieResults = async (title) => {
+		const url = `${server}/search/movie?api_key=a2f0798c92ead2ff4fa893d6a9430867&language=en-US&query=${title}`;
+		const res = await fetch(url);
+		const data = await res.json();
+
+		setResults(data.results);
+	};
+	
+	useEffect(() => {
+		getMovieResults('toy');
+	}, []);
 
 	return (
 		<div className='h-screen'>
@@ -47,15 +30,31 @@ export default function Home() {
 				<MainTitle />{' '}
 			</div>
 			<div>
-				<SearchBar />
+				<SearchBar
+					searchValue={searchValue}
+					inputChangeHandler={inputChangeHandler}
+				/>
 			</div>
-			<div className='flex space-x-4 overflow-x-auto'>
-				{movieSearch.map((movie) => (
-					<div key={movie.imbdID} className="flex-shrink-0">
-						<MovieResults title={movie.title} poster={movie.poster} />
-					</div>
-				))}
+			<div>
+				<MovieList movies={results.slice(0, 7)} />
 			</div>
 		</div>
 	);
 }
+
+// https://api.themoviedb.org/3
+//this set up will be good for details page
+//just dont make the url a search
+// export async function getServerSideProps() {
+// 	const res = await fetch(
+// 		`${server}/search/movie?api_key=${process.env.API_KEY}&language=en-US&query=Avengers&page=1`
+// 	);
+// 	const data = await res.json();
+// 	const movies = data.results;
+
+// 	return {
+// 		props: { movies },
+// 	};
+// }
+
+// https://api.themoviedb.org/3/movie/550?api_key=a2f0798c92ead2ff4fa893d6a9430867
