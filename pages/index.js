@@ -1,12 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import MainTitle from '../components/Hero';
 import MovieList from '../components/userSearch/MovieList';
 import SearchBar from '../components/userSearch/SearchBar';
-import { server } from '../config';
+import { server } from '../config'; 
 
 export default function Home() {
 	const [searchValue, setSearchValue] = useState('');
 	const [results, setResults] = useState([]);
+	const inputRef = useRef(null)
 
 	const getMovieResults = async (value) => {
 		const url = `${server}/search/movie?api_key=a2f0798c92ead2ff4fa893d6a9430867&language=en-US&query=${value}`;
@@ -17,7 +18,7 @@ export default function Home() {
 	};
 
 	useEffect(() => {
-		searchValue.length > 2 ? getMovieResults(searchValue) : '';
+		inputRef.current.value.length > 2 ? getMovieResults(inputRef.current.value) : '';
 	}, [searchValue]);
 
 	return (
@@ -26,7 +27,7 @@ export default function Home() {
 				<MainTitle />{' '}
 			</div>
 			<div>
-				<SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
+				<SearchBar  setSearchValue={setSearchValue} ref={inputRef} />
 			</div>
 			{results ? <MovieList movies={results} /> : 'test'}
 		</div>

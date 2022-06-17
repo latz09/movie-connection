@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const MovieList = ({ movies }) => { 
 	return (
-		<div className=''>
+		<div className=''> 
 			<div className='flex space-x-4  overflow-x-auto mt-8'>
 				{movies.map((movie) => (
 					<div
