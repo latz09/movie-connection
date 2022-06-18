@@ -6,11 +6,11 @@ const moviePage = ({ data }) => {
 		<div className='pt-12 bg-gray-800 h-screen'>
 			<MovieDisplay data={data} />
 		</div>
-	);
+	); 
 };
 
 export async function getStaticProps({ params }) {
-	const details_URL = `${server}/movie/${params.movieId}?api_key=${process.env.API_KEY}&language=en-US`;
+	const details_URL = `${server}/movie/${params.movieId}?api_key=${process.env.customKey}&language=en-US`;
 	const releaseInfo_URL = `${server}/movie/${params.movieId}/release_dates?api_key=${process.env.API_KEY}`;
 
 	const detailsResponse = await fetch(details_URL);
@@ -33,7 +33,7 @@ export async function getStaticProps({ params }) {
 				runtime: detailsData.runtime,
 				poster: detailsData.poster_path,
 				rating: premiereReleaseData.certification,
-				releaseDate:  (premiereReleaseData.release_date)
+				// releaseDate:  (premiereReleaseData.release_date)
 				
 			},
 		},

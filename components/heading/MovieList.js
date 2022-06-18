@@ -3,14 +3,15 @@ import posterFiller from '../../public/images/noPosterFiller.jpg';
 import { imageServer } from '../../config';
 import Poster from '../Displays/Poster';
 
-const MovieList = ({ movies }) => {
+const MovieList = ({ movies, clearResults }) => {
+	
 	return (
-		<div className='flex space-x-4  overflow-x-auto mt-8'>
+		<div className='flex space-x-4 overflow-x-auto mt-8'>
 			{movies.map((movie) => (
 				<div key={movie.id} className='results'>
 					{movie.poster_path === null ? (
 						<Link href={`movie/${movie.id}`}>
-							<a>
+							<a onClick={clearResults}>
 								<Poster
 									src={posterFiller}
 									alt={`${movie.original_title} movie poster`}
@@ -21,7 +22,9 @@ const MovieList = ({ movies }) => {
 						</Link>
 					) : (
 						<Link href={`movie/${movie.id}`}>
-							<a>
+							<a
+								onClick={clearResults}
+							>
 								<Poster
 									src={`${imageServer}/w500/${movie.poster_path}`}
 									alt={`${movie.original_title} movie poster`}

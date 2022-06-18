@@ -26,7 +26,7 @@ const MovieDisplay = ({ data }) => {
 							alt={`${details.title} movie poster`}
 							width={230}
 							height={300}
-						/>
+						/> 
 					</div>
 					<div>
 						<Overview genres={details.genres} overview={details.overview} />
