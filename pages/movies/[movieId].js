@@ -6,10 +6,10 @@ const moviePage = ({ data }) => {
 		<div className='pt-12 bg-gray-800 h-screen'>
 			<MovieDisplay data={data} />
 		</div>
-	); 
+	);
 };
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params, res }) {
 	const details_URL = `${server}/movie/${params.movieId}?api_key=${process.env.customKey}&language=en-US`;
 	const releaseInfo_URL = `${server}/movie/${params.movieId}/release_dates?api_key=${process.env.API_KEY}`;
 
@@ -22,7 +22,8 @@ export async function getStaticProps({ params }) {
 	const premiereReleaseData = releaseData.results.filter(
 		(x) => x.iso_3166_1 === 'US'
 	)[0].release_dates[0];
-	
+
+	// res.setHeader('location', `/movies/${params.movieId}` )
 
 	return {
 		props: {
@@ -34,10 +35,8 @@ export async function getStaticProps({ params }) {
 				poster: detailsData.poster_path,
 				rating: premiereReleaseData.certification,
 				// releaseDate:  (premiereReleaseData.release_date)
-				
 			},
 		},
-		revalidate: 10,
 	};
 }
 
@@ -49,4 +48,3 @@ export async function getStaticPaths() {
 }
 
 export default moviePage;
-
