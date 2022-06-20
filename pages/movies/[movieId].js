@@ -7,17 +7,17 @@ const moviePage = ({ data, movieId, recommendations }) => {
 
 	
 	return ( 
-		<div>
+		<div className=" w-3/4 mx-auto">
 			<div className='pt-12'>
 				<MovieDisplay data={data} />
 			</div>
 			<div>
-				<MovieReccomendations data={recommendations}/>
+				{recommendations && <MovieReccomendations data={recommendations}/>}
 			</div>
 		</div>
 	);
 };
-//https://api.themoviedb.org/3/movie/862/recommendations?api_key=a2f0798c92ead2ff4fa893d6a9430867&language=en-US&page=1
+
 export async function getStaticProps({ params, res }) {
 	const details_URL = `${server}/movie/${params.movieId}?api_key=${process.env.customKey}&language=en-US`;
 	const releaseInfo_URL = `${server}/movie/${params.movieId}/release_dates?api_key=${process.env.API_KEY}`;

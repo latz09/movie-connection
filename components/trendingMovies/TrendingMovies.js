@@ -1,11 +1,11 @@
 import SectionHeading from '../utils/SectionHeading';
 import MovieCategoryDisplay from '../Displays/MovieCategoryDisplay';
 
-const TrendingMovies = ({data}) => {
+const TrendingMovies = ({ data }) => {
 	return (
 		<div>
-			<SectionHeading title={'Trending Movies This Week'} />
-			<MovieCategoryDisplay data={data}/>
+			<SectionHeading title={'Trending This Week'} />
+			<MovieCategoryDisplay data={data} />
 		</div>
 	);
 };
