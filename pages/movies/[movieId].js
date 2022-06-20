@@ -3,7 +3,7 @@ import { server } from '../../config';
 
 const moviePage = ({ data }) => {
 	return (
-		<div className='pt-12 bg-gray-800 h-screen'>
+		<div className='py-12'>
 			<MovieDisplay data={data} />
 		</div>
 	);

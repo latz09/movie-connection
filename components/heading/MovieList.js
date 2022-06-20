@@ -4,7 +4,7 @@ import posterFiller from '../../public/images/noPosterFiller.jpg';
 import { imageServer } from '../../config';
 import Poster from '../Displays/Poster';
 
-const MovieList = ({ movies, clearResults }) => {
+const MovieList = ({ movies, clearResults }) => { 
 	const router = useRouter();
 	return (
 		<div className='flex space-x-4 overflow-x-auto mt-8'>
@@ -17,7 +17,7 @@ const MovieList = ({ movies, clearResults }) => {
 									? `${movie.id}`
 									: `movies/${movie.id}`
 							}
-						>
+						> 
 							<a onClick={clearResults}>
 								<Poster
 									src={posterFiller}
@@ -45,11 +45,7 @@ const MovieList = ({ movies, clearResults }) => {
 							</a>
 						</Link>
 					)}{' '}
-					<div>
-						<p className='text-center text-gray-900 text-lg font-semibold tracking-widest'>
-							{movie.original_title}
-						</p>
-					</div>
+				
 				</div>
 			))}
 		</div>

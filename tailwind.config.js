@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+
+
 module.exports = {
 	mode: 'jit',
 	content: [
@@ -6,7 +8,15 @@ module.exports = {
 		'./components/**/*.{js,ts,jsx,tsx}',
 	],
 	theme: {
-		extend: {},
+		extend: {
+			fontFamily: {
+				'logo' : ['Righteous', 'cursive'],
+				
+			},
+			colors: {
+				'neon-blue' : '#00C5C8',
+			}
+		},
 	},
 	plugins: [
 		require('@tailwindcss/forms'),

@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
 	.results {
-		@apply flex-shrink-0 text-center  shadow-lg bg-gray-100 rounded-lg border-2 border-gray-600 pb-2 cursor-pointer hover:border-white hover:shadow-2xl;
+		@apply flex-shrink-0 text-center shadow-lg cursor-pointer border-2 pb-4 border-black hover:border-2 hover:shadow-2xl hover:shadow-neon-blue;
 	}
 }

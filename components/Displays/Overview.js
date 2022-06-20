@@ -1,19 +1,19 @@
 const Overview = ({ overview, genres }) => {
 	return (
 		<div>
-			<ul className='flex space-x-5 py-3'>
+			<ul className='flex space-x-2 py-4'>
 				{genres
 					? genres.map((genre) => (
 							<li
 								key={genre.id}
-								className='font-medium border px-3 py-1 rounded-full shadow shadow-gray-600 hover:shadow-lg hover:shadow-gray-400'
+								className='bg-gray-900 rounded border border-gray-600 cursor-pointer py-1 px-2 hover:border-gray-300 hover:shadow hover:shadow-gray-100'
 							>
 								{genre.name}
 							</li>
 					  ))
 					: ''}
 			</ul>
-			<div className='text-white font-medium tracking-widest leading-6'>
+			<div className='text-gray-200 tracking-widest leading-6'>
 				<p>{overview}</p>
 			</div>
 		</div>

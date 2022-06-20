@@ -12,7 +12,7 @@ const MovieDisplay = ({ data }) => {
 	}, [data]);
 
 	return (
-		<div className='w-3/4 mx-auto'>
+		<div className='w-3/4 mx-auto pb-20 text-neon-blue'>
 			{details && (
 				<div>
 					<DisplayHeading
