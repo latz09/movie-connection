@@ -7,12 +7,13 @@ import DisplayHeading from './DisplayHeading';
 const MovieDisplay = ({ data }) => {
 	const [details, setDetails] = useState([]);
 
+
 	useEffect(() => {
 		setDetails(data);
 	}, [data]);
 
 	return (
-		<div className='w-3/4 mx-auto pb-20 text-neon-blue'>
+		<div className='w-3/4 mx-auto pb-4 text-neon-blue'>
 			{details && (
 				<div>
 					<DisplayHeading

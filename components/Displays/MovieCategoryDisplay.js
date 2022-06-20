@@ -1,16 +1,11 @@
 import Link from 'next/link';
 import { imageServer } from '../../config';
-import Poster from '../Displays/Poster';
-import SectionHeading from '../utils/SectionHeading';
+import Poster from './Poster';
 
-const TrendingDisplay = ({ data }) => {
-	// console.log(data)
-
+const MovieCategoryDisplay = ({ data }) => {
 	return (
 		<>
-			<div className='p-8'>
-				<SectionHeading title={'Trending Movies this Week'} />
-			</div>
+		
 			<div className='flex space-x-4 overflow-x-auto'>
 				{data.map((movie) => (
 					<div key={movie.id} className='results'>
@@ -31,4 +26,4 @@ const TrendingDisplay = ({ data }) => {
 	);
 };
 
-export default TrendingDisplay;
+export default MovieCategoryDisplay;

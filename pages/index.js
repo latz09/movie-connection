@@ -1,12 +1,13 @@
 import { trendingServer } from '../config';
-import TrendingDisplay from '../components/trendingMovies/TrendingDisplay';
+import MovieCategoryDisplay from '../components/Displays/MovieCategoryDisplay';
+import TrendingMovies from '../components/trendingMovies/TrendingMovies';
 
-export default function Home({ data }) {
-	console.log(data);
+export default function Home({ trendingData }) {
 	return (
 		<div className='min-h-screen bg-[#0d0d0d] px-8 max-w-6xl mx-auto'>
-			<TrendingDisplay data={data} />
+			<TrendingMovies data={trendingData} />
 		</div>
+		
 	);
 }
 
@@ -14,11 +15,12 @@ export async function getServerSideProps() {
 	const trendingResponse = await fetch(
 		`${trendingServer}${process.env.customKey}`
 	);
-	const trendingData = await trendingResponse.json();
+	const data = await trendingResponse.json();
 
 	return {
 		props: {
-			data: trendingData.results,
+			trendingData: data.results,
 		},
 	};
 }
+ 
