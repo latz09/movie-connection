@@ -2,7 +2,6 @@ import MovieCategoryDisplay from '../Displays/MovieCategoryDisplay';
 import SectionHeading from '../utils/SectionHeading';
 
 const TopRatedMovies = ({ data }) => {
-	console.log(data);
 	return (
 		<>
 			<div>

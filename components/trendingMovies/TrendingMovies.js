@@ -1,11 +1,30 @@
 import SectionHeading from '../utils/SectionHeading';
 import MovieCategoryDisplay from '../Displays/MovieCategoryDisplay';
 
-const TrendingMovies = ({ data }) => {
+import { useState } from 'react';
+import TrendingFilter from './TrendingFilter';
+
+const TrendingMovies = ({ dataForWeek, dataForDay }) => {
+	const [trenderFilter, setTrenderFilter] = useState(dataForWeek);
+	const [toggle, setToggle] = useState('week');
+
+	const setToDay = () => {
+		setTrenderFilter(dataForDay);
+		setToggle('day');
+	};
+
+	const setToWeek = () => {
+		setTrenderFilter(dataForWeek);
+		setToggle('week');
+	};
+
 	return (
 		<div>
-			<SectionHeading title={'Trending This Week'} />
-			<MovieCategoryDisplay data={data} />
+			<SectionHeading
+				title={`${toggle === 'week' ? 'Trending This Week' : 'Trending Today'}`}
+			/>
+			<TrendingFilter setDay={setToDay} setWeek={setToWeek} toggle={toggle} />
+			<MovieCategoryDisplay data={trenderFilter} />
 		</div>
 	);
 };

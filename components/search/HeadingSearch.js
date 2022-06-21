@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import MovieList from './MovieList';
-import SearchBar from './SearchBar';
-import { server } from '../../../config';
+import SearchBar from './SearchBar'; 
+import { server } from '../../config';
 
 const HeadingSearch = () => {
 	const [searchValue, setSearchValue] = useState('');

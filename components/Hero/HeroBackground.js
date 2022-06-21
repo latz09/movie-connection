@@ -1,4 +1,4 @@
-import HeadingSearch from '../layout/heading/HeadingSearch';
+
 import HeroImage from './HeroImage';
 import starwarsImage from '../../public/images/starwars.jpg';
 import pulpFictionImage from '../../public/images/pulp-fiction.webp';

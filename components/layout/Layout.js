@@ -1,7 +1,5 @@
 import Navbar from '../layout/Navbar';
 
-import HeroBackground from '../Hero/HeroBackground';
-
 const Layout = ({ children }) => {
 	return (
 		<>

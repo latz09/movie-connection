@@ -13,7 +13,7 @@ const Overview = ({ overview, genres }) => {
 					  ))
 					: ''}
 			</ul>
-			<div className='text-gray-200 tracking-widest leading-6'>
+			<div className='text-gray-200 tracking-widest leading-6 text-center'>
 				<p>{overview}</p>
 			</div>
 		</div>
