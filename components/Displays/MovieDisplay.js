@@ -15,7 +15,7 @@ const MovieDisplay = ({ data }) => {
 	return (
 		<div className='pb-4 text-neon-blue'>
 			{details && (
-				<div>
+				<div> 
 					<DisplayHeading
 						title={details.title}
 						rating={details.rating}
@@ -30,7 +30,7 @@ const MovieDisplay = ({ data }) => {
 						/> 
 					</div>
 					<div>
-						<Overview genres={details.genres} overview={details.overview} />
+						<Overview genres={details.genres} summary={details.overview} />
 					</div>
 				</div>
 			)}

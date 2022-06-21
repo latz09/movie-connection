@@ -7,7 +7,7 @@ const moviePage = ({ data, movieId, recommendations }) => {
 
 	
 	return ( 
-		<div className=" w-3/4 mx-auto">
+		<div className=" w-3/4 mx-auto min-h-screen">
 			<div className='pt-12'>
 				<MovieDisplay data={data} />
 			</div>
