@@ -6,7 +6,7 @@ const TopRatedMovies = ({ data }) => {
 	return (
 		<>
 			<div>
-				<SectionHeading title={'All Time Top Rated'} />{' '}
+				<SectionHeading title={'Through the years top rated'} />{' '}
 			</div>
 			<div>
 				<MovieCategoryDisplay data={data} />

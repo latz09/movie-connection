@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import MovieList from './MovieList';
 import SearchBar from './SearchBar';
-import { server } from '../../config';
+import { server } from '../../../config';
 
 const HeadingSearch = () => {
 	const [searchValue, setSearchValue] = useState('');
@@ -29,7 +29,7 @@ const HeadingSearch = () => {
 	}, [searchValue]);
 
 	return (
-		<div className='px-12'>
+		<div className='pt-12'>
 			<div>
 				<SearchBar setSearchValue={setSearchValue} ref={inputRef} />
 			</div>

@@ -1,14 +1,14 @@
-import HeadingSearch from '../heading/HeadingSearch';
 import Navbar from '../layout/Navbar';
+
+import HeroBackground from '../Hero/HeroBackground';
+
 const Layout = ({ children }) => {
 	return (
 		<>
 			<div>
 				<Navbar />
 			</div>
-			<div>
-				<HeadingSearch />
-			</div>
+		
 
 			<main>{children}</main>
 		</>

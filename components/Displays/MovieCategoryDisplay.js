@@ -6,7 +6,7 @@ const MovieCategoryDisplay = ({ data }) => {
 	return (
 		<>
 		
-			<div className='flex space-x-4 overflow-x-auto'>
+			<div className='flex space-x-4 overflow-x-auto no-scrollbar'>
 				{data.map((movie) => (
 					<div key={movie.id} className='results'>
 						<Link href={`/movies/${movie.id}`}>

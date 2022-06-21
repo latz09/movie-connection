@@ -2,11 +2,19 @@ import { trendingServer, server } from '../config';
 
 import TrendingMovies from '../components/trendingMovies/TrendingMovies';
 import TopRatedMovies from '../components/top-rated/TopRatedMovies';
+import HeadingSearch from '../components/layout/heading/HeadingSearch';
+import Hero from '../components/Hero/Hero';
 
 export default function Home({ trendingData, topRatedData }) {
 	console.log(topRatedData);
 	return (
 		<div className='min-h-screen bg-[#0d0d0d] px-8 max-w-6xl mx-auto'>
+			<div>
+				<Hero />
+			</div>
+			<div>
+				<HeadingSearch />
+			</div>
 			<div className='pb-12'>
 				{' '}
 				<TrendingMovies data={trendingData} />

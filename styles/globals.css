@@ -7,6 +7,6 @@
 
 @layer components {
 	.results {
-		@apply flex-shrink-0 text-center shadow-lg cursor-pointer border-2 pb-4 border-black hover:border-2 hover:shadow-2xl hover:shadow-neon-blue;
+		@apply flex-shrink-0 text-center shadow-lg cursor-pointer pb-4 hover:shadow-2xl hover:shadow-neon-blue;
 	}
 }

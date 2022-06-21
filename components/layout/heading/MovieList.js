@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import posterFiller from '../../public/images/noPosterFiller.jpg';
-import { imageServer } from '../../config';
-import Poster from '../Displays/Poster';
+import posterFiller from '../../../public/images/noPosterFiller.jpg'
+import { imageServer } from '../../../config';
+import Poster from '../../Displays/Poster';
 
 const MovieList = ({ movies, clearResults }) => { 
 	const router = useRouter();
