@@ -1,16 +1,35 @@
-// import { server } from '../config';
+import {
+	server,
+	imageServer,
+	trendingServer_Week,
+	trendingServer_Day,
+	topRatedServer,
+} from '../config/index';
 
+// function to return trendingData_week, trendingData_day and topRatedData
 
-// export async function getResults (title) {
-//     const x = process.env.API_KEY
+export const getHomePageData = async () => {
+	const homePageData = [];
 
-// 	const url = `${server}/search/movie?api_key=a2f0798c92ead2ff4fa893d6a9430867&language=en-US&query=${title}`;
-   
-// 	const res = await fetch(url);
-// 	const data = await res.json();
-//     const movies = data.results
-  
-//     return movies
-// }
-// https://api.themoviedb.org/3/search/movie?api_key=a2f0798c92ead2ff4fa893d6a9430867&language=en-US&query=Twister&page=1	setMovie(getResults('avengers'))
+	const weekTrendingResponse = await fetch(trendingServer_Week);
 
+	const dayTrendingResponse = await fetch(trendingServer_Day);
+
+	const topRatedResponse = await fetch(topRatedServer);
+
+	const weekTrendingData = await weekTrendingResponse.json();
+	const dayTrendingData = await dayTrendingResponse.json();
+	const topRatedData = await topRatedResponse.json();
+
+	homePageData.push({
+		trendingForWeek: weekTrendingData,
+		trendingForDay: dayTrendingData,
+		topRated: topRatedData,
+	});
+
+	return homePageData[0];
+};
+
+//function to return details and premeireReleaseData and trailer
+
+//function to return recommendations

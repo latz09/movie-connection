@@ -4,13 +4,13 @@ import SectionHeading from '../utils/SectionHeading';
 const TopRatedMovies = ({ data }) => {
 	return (
 		<>
-			<div>
+			<div className="pb-3">
 				<SectionHeading title={'Through the years top rated'} />{' '}
 			</div>
 			<div>
 				<MovieCategoryDisplay data={data} />
 			</div>
-		</>
+		</> 
 	);
 };
 

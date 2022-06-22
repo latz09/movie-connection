@@ -9,10 +9,10 @@
 		@apply flex-shrink-0 text-center shadow-lg cursor-pointer pb-4 hover:shadow-2xl hover:shadow-neon-blue;
 	}
 	.btn-filter-focused {
-		@apply bg-gray-900 p-4 rounded m-4 text-neon-blue shadow-sm shadow-neon-blue border border-neon-blue;
+		@apply bg-gray-900 p-1 sm:p-4 rounded m-4 text-neon-blue shadow-sm shadow-neon-blue border border-neon-blue;
 	}
 
 	.btn-filter {
-		@apply bg-neon-blue p-4 rounded m-4 text-gray-800;
+		@apply bg-neon-blue p-1 px-4 sm:px-4 rounded m-4 text-gray-800;
 	}
 }
