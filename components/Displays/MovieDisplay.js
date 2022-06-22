@@ -3,12 +3,11 @@ import { useState, useEffect } from 'react';
 import Overview from './Overview';
 import Poster from './Poster';
 import DisplayHeading from './DisplayHeading';
-import { YouTubeDisplay, SmallYouTubeDisplay } from './YouTubeDisplay';
+// import { YouTubeDisplay, SmallYouTubeDisplay } from './YouTubeDisplay';
 
-const MovieDisplay = ({ data, trailer }) => {
-	const [details, setDetails] = useState([]);
-
+const MovieDisplay = ({ data }) => {
 	
+	const [details, setDetails] = useState([]);
 
 	useEffect(() => {
 		setDetails(data);
@@ -33,16 +32,16 @@ const MovieDisplay = ({ data, trailer }) => {
 								height={300}
 							/>
 						</div>
-						<div>
-						{trailer &&	<YouTubeDisplay videoId={trailer[0].key}/>}
-						</div>
+						{/* <div>
+						 {trailer &&	<YouTubeDisplay videoId={trailer[0].key}/>}
+						</div> */}
 					</div>
 
 					<div>
 						<Overview genres={details.genres} summary={details.overview} />
 					</div>
 				</div>
-			)}
+			)} 
 		</div>
 	);
 };

@@ -18,7 +18,7 @@ const MovieCategoryDisplay = ({ data }) => {
 								/>
 							</a>
 						</Link> 
-					</div>
+					</div> 
 				))}
 			</div>
 		</>
