@@ -8,7 +8,7 @@ const MovieReccomendations = ({ data }) => {
 	useEffect(() => {
 	  setRecommendations(data)
 	}, [data])
-
+ 
 	return (
 		<div className='pb-20'>
 			<div className='p-6'>

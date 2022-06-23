@@ -1,25 +1,23 @@
 import MovieDisplay from '../../components/Displays/MovieDisplay';
 import MovieReccomendations from '../../components/recommendations/MovieRecommendations';
 
-
 import {
-	getMovieDetails,
+	getMovieDetails, 
 	getMovieRecommendations,
 } from '../../utils/getResults';
 
 const moviePage = ({ movieData, recommendations }) => {
+
+
 	return (
-		<div className=' w-3/4 mx-auto min-h-screen'>
-			<div className='pt-12'>
+		<div className='mx-auto min-h-screen'>
+			<div className=''>
 				<MovieDisplay data={movieData} />
 			</div>
-			<div>
-				{recommendations && <MovieReccomendations data={recommendations} />} 
+			<div className="mx-auto max-w-4xl p-3">
+				{recommendations && <MovieReccomendations data={recommendations.results} />} 
 				
-			</div>
-			<div>
-				<h1 className="text-center">loading</h1>
-			</div>
+			</div> 
 		</div>
 	);
 };
@@ -29,7 +27,7 @@ export async function getStaticProps({ params, res }) {
 	const recommendations = await getMovieRecommendations(params.movieId);
 
 	return {
-		props: { movieData, recommendations: recommendations.results },
+		props: { movieData, recommendations: recommendations },
 	};
 }
 

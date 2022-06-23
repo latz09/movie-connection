@@ -1,6 +1,5 @@
 import {
 	server,
-	imageServer,
 	trendingServer_Week,
 	trendingServer_Day,
 	topRatedServer,
@@ -31,28 +30,14 @@ export const getHomePageData = async () => {
 	return homePageData;
 };
 
-//function to return details and premeireReleaseData and trailer
-
 export const getMovieDetails = async (movieId) => {
 	let movieDetails;
-	//urls
-	const details_URL = `${server}/movie/${movieId}?api_key=${dbKey}&language=en-US`;
 
-	const releaseInfo_URL = `${server}/movie/${movieId}/release_dates?api_key=${dbKey}`;
+	const details_URL = `${server}/movie/${movieId}?api_key=${dbKey}&language=en-US`;	
 
-	const trailer_URL = `${server}/movie/${movieId}/videos?api_key=${dbKey}`;
-
-	//responses
 	const detailsResponse = await fetch(details_URL);
 
-	const releaseInfoResponse = await fetch(releaseInfo_URL);
-
-	const trailerResponse = await fetch(trailer_URL);
-
-	//jsonData
 	const detailsData = await detailsResponse.json();
-	const releaseData = await releaseInfoResponse.json();
-	const trailerData = await trailerResponse.json();
 
 	movieDetails = {
 		title: detailsData.title,
@@ -60,19 +45,17 @@ export const getMovieDetails = async (movieId) => {
 		genres: detailsData.genres,
 		runtime: detailsData.runtime,
 		poster: detailsData.poster_path,
-		// rating: releaseData.results,
-		// trailer: trailerData.results
+		backdrop: detailsData.backdrop_path,
 	};
 
 	return movieDetails;
 };
 
-//function to return recommendations
-
 export const getMovieRecommendations = async (movieId) => {
 	const recommendation_URL = `${server}/movie/${movieId}/recommendations?api_key=${dbKey}&language=en-US&page=1`;
 
 	const recommendationResponse = await fetch(recommendation_URL);
-    const recommendations = recommendationResponse.json()
-	return recommendations
+	const recommendations = recommendationResponse.json();
+
+	return recommendations;
 };

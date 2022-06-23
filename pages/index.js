@@ -7,9 +7,8 @@ import { getHomePageData } from '../utils/getResults';
 export default function Home({ weekTrending, dayTrending, topRated }) {
 	return (
 		<div className='min-h-screen bg-[#0d0d0d] max-w-6xl mx-auto'>
-			<div>
-				<Hero />
-			</div>
+			<Hero />
+
 			<div className='px-6'>
 				<HeadingSearch />
 			</div>
