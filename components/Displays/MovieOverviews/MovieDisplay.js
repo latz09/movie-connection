@@ -1,27 +1,23 @@
-import { imageServer } from '../../config';
+import { imageServer } from '../../../config';
 import { useState, useEffect } from 'react';
 import Overview from './Overview';
 import Poster from './Poster';
 import DisplayHeading from './DisplayHeading';
 import Backdrop from './Backdrop';
+import MovieDescriptionLinks from './MovieDescriptionLinks';
+import Loading from '../../utils/Loading';
 
-import VideoLink from '../Videos/VideoLink';
-
-const MovieDisplay = ({ data }) => {
+const MovieDisplay = ({ data }) => {  
+	
 	const [details, setDetails] = useState([]);
-
-	//video id is in details.trailerId
-	//need to figure out how to filter it to just give the key to trailerButton
-	//maybe best to do it in getResults...or possibly in props
-	//try props from [movieId]
-
+	
 	useEffect(() => {
 		setDetails(data);
-	}, [data]);
+	}, [data]); 
 
 	return (
 		<div className='text-neon-blue'>
-			{details && (
+			{details ? (
 				<div>
 					<div className='relative'>
 						{details.backdrop === null ? (
@@ -54,17 +50,17 @@ const MovieDisplay = ({ data }) => {
 							''
 						) : (
 							<div className='md:text-xl pb-3'>
-								<VideoLink trailerId={details.trailerId} />
+								<MovieDescriptionLinks trailerId={details.trailerId} movieId={details.id}/>
 							</div>
 						)}
 
 						<Overview genres={details.genres} summary={details.overview} />
 					</div>
 				</div>
-			)}
+			) : <Loading /> }
 		</div>
 	);
 };
 
-//xl:ml-24 2xl:pl-24 2xl:pt-8
+
 export default MovieDisplay;

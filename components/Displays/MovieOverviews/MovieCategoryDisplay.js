@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { imageServer } from '../../config';
+import { imageServer } from '../../../config';
 import Poster from './Poster';
 
 const MovieCategoryDisplay = ({ data }) => {

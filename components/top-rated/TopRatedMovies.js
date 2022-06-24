@@ -1,4 +1,4 @@
-import MovieCategoryDisplay from '../Displays/MovieCategoryDisplay';
+import MovieCategoryDisplay from '../Displays/MovieOverviews/MovieCategoryDisplay';
 import SectionHeading from '../utils/SectionHeading';
 
 const TopRatedMovies = ({ data }) => {

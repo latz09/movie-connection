@@ -1,4 +1,4 @@
-import MovieDisplay from '../../components/Displays/MovieDisplay';
+import MovieDisplay from '../../components/Displays/MovieOverviews/MovieDisplay';
 import MovieReccomendations from '../../components/recommendations/MovieRecommendations';
 
 import {
@@ -22,7 +22,7 @@ const moviePage = ({ movieData, recommendations }) => {
 	); 
 };
 
-export async function getStaticProps({ params, res }) {
+export async function getStaticProps({ params }) {
 	const movieData = await getMovieDetails(params.movieId);
 	const recommendations = await getMovieRecommendations(params.movieId);
 

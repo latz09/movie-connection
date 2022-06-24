@@ -1,6 +1,5 @@
 import SectionHeading from '../utils/SectionHeading';
-import MovieCategoryDisplay from '../Displays/MovieCategoryDisplay';
-
+import MovieCategoryDisplay from '../Displays/MovieOverviews/MovieCategoryDisplay';
 import { useState } from 'react';
 import TrendingFilter from './TrendingFilter';
 

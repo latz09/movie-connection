@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import MovieCategoryDisplay from '../Displays/MovieCategoryDisplay';
+import MovieCategoryDisplay from '../Displays/MovieOverviews/MovieCategoryDisplay';
 import SectionHeading from '../utils/SectionHeading';
 
 const MovieReccomendations = ({ data }) => {

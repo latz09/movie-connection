@@ -57,10 +57,11 @@ export const getMovieDetails = async (movieId) => {
 		title: detailsData.title,
 		overview: detailsData.overview,
 		genres: detailsData.genres,
-		runtime: detailsData.runtime,
+		runtime: detailsData.runtime, 
 		poster: detailsData.poster_path,
 		backdrop: detailsData.backdrop_path,
-		trailerId: trailerId
+		trailerId: trailerId,
+		id: detailsData.id
 	};
 
 
@@ -76,3 +77,12 @@ export const getMovieRecommendations = async (movieId) => {
 
 	return recommendations;
 };
+
+export const getMovieCredits = async (movieId) => {
+	const credits_Url = `${server}/movie/${movieId}/credits?api_key=${dbKey}&language=en-US&page=1`
+
+	const creditsResponse = await fetch(credits_Url)
+	const credits = creditsResponse.json()
+
+	return credits;
+}

@@ -1,6 +1,6 @@
-import VideoButton from '../utils/VideoButton';
-
-const VideoLink = ({trailerId}) => {
+import VideoButton from "../utils/VideoLink";
+import { AiFillYoutube } from 'react-icons/ai';
+const VideoLink = ({trailerId}) => { 
 	return (
 		<>
 			<a
