@@ -5,6 +5,7 @@ import {
 	topRatedServer,
 } from '../config/index';
 
+
 const dbKey = process.env.customKey;
 
 //homePage data retrieval: -trending day&week- -top rated -
@@ -33,11 +34,24 @@ export const getHomePageData = async () => {
 export const getMovieDetails = async (movieId) => {
 	let movieDetails;
 
-	const details_URL = `${server}/movie/${movieId}?api_key=${dbKey}&language=en-US`;	
+	const details_URL = `${server}/movie/${movieId}?api_key=${dbKey}&language=en-US`;
+	const trailer_URL = `${server}/movie/${movieId}/videos?api_key=${dbKey}`;
 
 	const detailsResponse = await fetch(details_URL);
+	const trailerResponse = await fetch(trailer_URL);
 
 	const detailsData = await detailsResponse.json();
+	const trailerData = await trailerResponse.json();
+
+	let trailerId
+	if (trailerData.results.length < 1) {
+		trailerId = null
+	} else {
+		trailerId = trailerData.results.filter(trailer => trailer.site === 'YouTube')[0].key
+	}
+
+	const x = trailerData.results.filter(trailer => trailer.site === 'YouTube')
+
 
 	movieDetails = {
 		title: detailsData.title,
@@ -46,7 +60,10 @@ export const getMovieDetails = async (movieId) => {
 		runtime: detailsData.runtime,
 		poster: detailsData.poster_path,
 		backdrop: detailsData.backdrop_path,
+		trailerId: trailerId
 	};
+
+
 
 	return movieDetails;
 };

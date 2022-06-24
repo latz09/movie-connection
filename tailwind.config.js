@@ -11,6 +11,7 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				'logo' : ['Righteous', 'cursive'],
+				'description' : ['Roboto Mono', 'monospace'],
 				
 			},
 			colors: {

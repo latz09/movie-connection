@@ -1,7 +1,7 @@
 const HeroOverlay = () => {
 	return (
-		<div className='space-y-4 xs:space-y-6 xs:space-y-4 pt-7 xs:pt-3 pb-7 sm:space-y-7 md:pt-12'>
-			<h1 className='text-5xl sm:text-7xl md:text-9xl text-neon-blue font-extrabold '>
+		<div className='space-y-4 pb-2 xs:space-y-6  xs:space-y-4 pt-7 xs:pt-3 sm:space-y-7 md:pt-12'>
+			<h1 className='text-5xl xs:text-6xl sm:text-7xl md:text-9xl text-neon-blue font-extrabold '>
 				EXPLORE
 			</h1>
 			<p className='text-sm sm:text-xl md:text-3xl lg:2xl'>

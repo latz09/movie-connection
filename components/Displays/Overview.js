@@ -4,16 +4,13 @@ const Overview = ({ summary, genres }) => {
 			<div className='grid grid-cols-3 md:grid-cols-5 py-2 md:py-4 gap-1 content-center'>
 				{genres
 					? genres.map((genre) => (
-							<div
-								key={genre.id}
-								className='bg-gray-900 rounded border border-gray-600 cursor-pointer py-1 hover:border-gray-300 hover:shadow hover:shadow-gray-100 text-center md:py-2'
-							>
+							<div key={genre.id} className='btn-genre'>
 								{genre.name}
 							</div>
 					  ))
 					: ''}
 			</div>
-			<div className='text-gray-200 tracking-widest leading-6 text-center text-sm md:text-base'>
+			<div className='movie-summary font-description'>
 				<p>{summary}</p>
 			</div>
 		</div>

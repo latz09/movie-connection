@@ -4,20 +4,26 @@ import Overview from './Overview';
 import Poster from './Poster';
 import DisplayHeading from './DisplayHeading';
 import Backdrop from './Backdrop';
-import TrailerButton from '../utils/TrailerButton';
+
+import VideoLink from '../Videos/VideoLink';
 
 const MovieDisplay = ({ data }) => {
 	const [details, setDetails] = useState([]);
+
+	//video id is in details.trailerId
+	//need to figure out how to filter it to just give the key to trailerButton
+	//maybe best to do it in getResults...or possibly in props
+	//try props from [movieId]
 
 	useEffect(() => {
 		setDetails(data);
 	}, [data]);
 
 	return (
-		<div className='pb-4 text-neon-blue'>
+		<div className='text-neon-blue'>
 			{details && (
-				<div className='relative'>
-					<div className=''>
+				<div>
+					<div className='relative'>
 						{details.backdrop === null ? (
 							<div className='flex justify-center opacity-30'>
 								<Poster
@@ -38,15 +44,20 @@ const MovieDisplay = ({ data }) => {
 								/>
 							</div>
 						)}
-					</div>
-					<div className='p-3 absolute inset-0 max-w-5xl mx-auto  flex flex-col'>
-						<DisplayHeading title={details.title} runtime={details.runtime} />
+						<div className='p-3 absolute inset-0 max-w-5xl mx-auto  flex flex-col'>
+							<DisplayHeading title={details.title} runtime={details.runtime} />
+						</div>
 					</div>
 
 					<div className='mx-auto max-w-5xl p-2'>
-						<div className='xl:block md:text-xl pb-3'>
-							<TrailerButton />
-						</div>
+						{details.trailerId === null ? (
+							''
+						) : (
+							<div className='md:text-xl pb-3'>
+								<VideoLink trailerId={details.trailerId} />
+							</div>
+						)}
+
 						<Overview genres={details.genres} summary={details.overview} />
 					</div>
 				</div>

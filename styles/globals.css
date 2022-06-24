@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -14,5 +15,14 @@
 
 	.btn-filter {
 		@apply bg-neon-blue p-1 px-4 sm:px-4 rounded m-4 text-gray-800;
+	}
+	.btn-genre {
+		@apply bg-gray-900 rounded border border-gray-600 cursor-pointer py-1 hover:border-gray-300 hover:shadow hover:shadow-gray-100 text-center md:py-2
+	}
+	.movie-summary {
+	@apply text-gray-100 tracking-widest leading-8 md:leading-10 text-sm md:text-base p-3 rounded shadow shadow-gray-900 mt-4
+	}
+	.btn-trailer {
+	 @apply bg-gray-100 opacity-60 border-2 border-neon-blue px-3 py-1 text-gray-900 rounded hover:opacity-80 hover:text-black hover:border-gray-800
 	}
 }
