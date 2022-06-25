@@ -8,7 +8,12 @@ export async function getActorBiography(actorId) {
 	let biography;
 
 	return (biography = {
-		biography: bioData.biography,
+		name: bioData.name,
+		bio: bioData.biography,
+		image: bioData.profile_path,
+		age: bioData.birthday,
+		birthPlace: bioData.place_of_birth
+
 	});
 }
 export async function getActorRelatedImages(actorId) {

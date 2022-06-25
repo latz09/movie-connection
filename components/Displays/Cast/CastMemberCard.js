@@ -3,7 +3,7 @@ import Poster from '../MovieOverviews/Poster';
 const CastMemberCard = ({ name, picture, character }) => {
 	return (
 		<div className='card-cast hover:opacity-80 hover:shadow hover:shadow-gray-800  font-description'>
-			<div className='grid gap-1'>
+		 	<div className='grid gap-1'>
 				<div className='place-self-center  rounded-lg'>
 					<Poster
 						src={picture}
