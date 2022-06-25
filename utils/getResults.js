@@ -83,6 +83,7 @@ export const getMovieCredits = async (movieId) => {
 
 	const creditsResponse = await fetch(credits_Url)
 	const credits = creditsResponse.json()
+	
 
 	return credits;
 }

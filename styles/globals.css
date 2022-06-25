@@ -17,12 +17,19 @@
 		@apply bg-neon-blue p-1 px-4 sm:px-4 rounded m-4 text-gray-800;
 	}
 	.btn-genre {
-		@apply bg-gray-900 rounded border border-gray-600 cursor-pointer py-1 hover:border-gray-300 hover:shadow hover:shadow-gray-100 text-center md:py-2
+		@apply bg-gray-900 rounded border border-gray-600 cursor-pointer py-1 hover:border-gray-300 hover:shadow hover:shadow-gray-100 text-center md:py-2;
 	}
 	.movie-summary {
-	@apply text-gray-100 tracking-widest leading-8 md:leading-10 text-sm md:text-base p-3 rounded shadow shadow-gray-900 mt-4
+		@apply text-gray-100 tracking-widest leading-8 md:leading-10 text-sm md:text-base p-3 rounded shadow shadow-gray-900 mt-4;
 	}
 	.btn-link {
-	 @apply border border-neon-blue px-3 py-1 rounded hover:bg-gray-900 hover:opacity-70
+		@apply border border-neon-blue px-3 py-1 rounded hover:bg-gray-900 hover:opacity-70;
+	}
+	.container-cast {
+		@apply py-6 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center gap-8 ;
+	}
+
+	.card-cast {
+		@apply p-3 border-neon-blue  border-opacity-10  bg-gray-800 bg-opacity-5 tracking-wide text-neon-blue cursor-pointer ;
 	}
 }

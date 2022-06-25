@@ -1,30 +1,37 @@
 import AllCastDisplay from '../../../components/Displays/Cast/AllCastDisplay';
+import Loading from '../../../components/utils/Loading'
 import { getMovieCredits, getMovieDetails } from '../../../utils/getResults';
 import { useState, useEffect } from 'react';
-const CastPage = ({ data }) => {
-	const [castMembers, setCastMembers] = useState([]);
+
+const CastPage = ({ castData, title }) => {
+	const [cast, setCast] = useState([]);
 
 	useEffect(() => {
-		setCastMembers(data);
-	}, [data]);
+		setCast(castData);
+	}, [castData]);
+
 
 	return (
-		<div className='min-h-screen'>
-			{' '}
-			{castMembers && <AllCastDisplay data={castMembers.castMembers} />}
+		<div className='min-h-screen max-w-5xl mx-auto'>
+			{cast ? (
+				<div>
+					{' '}
+					<AllCastDisplay castData={castData} title={title} />
+				</div>
+			) : (
+				<Loading />
+			)}
 		</div>
 	);
 };
 
-
 export async function getStaticProps({ params }) {
 	const castData = await getMovieCredits(params.movieId);
 	const movieData = await getMovieDetails(params.movieId);
-	const castMembers = castData.cast;
 
 	return {
 		props: {
-			data: { castMembers },
+			castData, title: movieData.title
 		},
 	};
 }
