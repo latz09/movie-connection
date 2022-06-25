@@ -1,6 +1,7 @@
 import AllCastDisplay from '../../../components/Displays/Cast/AllCastDisplay';
 import Loading from '../../../components/utils/Loading'
-import { getMovieCredits, getMovieDetails } from '../../../utils/getResults';
+import { getMovieCredits } from '../../../utils/fetchMovies/getMovieCredits';
+import { getMovieDetails } from '../../../utils/fetchMovies/getMovieDetails';
 import { useState, useEffect } from 'react';
 
 const CastPage = ({ castData, title }) => {

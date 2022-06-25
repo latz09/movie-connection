@@ -1,8 +1,8 @@
+import Link from 'next/link';
 import SectionHeading from '../../utils/SectionHeading';
 import CastMemberCard from './CastMemberCard';
-
-import { useState, useEffect } from 'react';
 import BackButton from '../../utils/BackButton';
+import { useState, useEffect } from 'react';
 {
 	/* //learn lazy load */
 }
@@ -18,25 +18,28 @@ const AllCastDisplay = ({ castData, title }) => {
 		}
 	}, [castData]);
 
+	
+
 	return (
 		<>
 			{' '}
 			<div className='my-8'>
-				
 				<SectionHeading title={title} />
-				<div className="text-center">
+				<div className='text-center'>
 					<BackButton />
 				</div>
 			</div>
 			<ul className='container-cast'>
 				{cast.map((actor) => (
-					<li key={actor.name}>
-						<CastMemberCard
-							name={actor.name}
-							picture={actor.profile_path}
-							character={actor.character}
-						/>
-					</li>
+					<Link href={`/actor/${actor.id}`} key={actor.name}>
+						<li>
+							<CastMemberCard
+								name={actor.name}
+								picture={actor.profile_path}
+								character={actor.character}
+							/>
+						</li>
+					</Link>
 				))}
 			</ul>
 		</>

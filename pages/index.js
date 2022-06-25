@@ -2,7 +2,7 @@ import TrendingMovies from '../components/trendingMovies/TrendingMovies';
 import TopRatedMovies from '../components/top-rated/TopRatedMovies';
 import HeadingSearch from '../components/search/HeadingSearch';
 import Hero from '../components/Hero/Hero';
-import { getHomePageData } from '../utils/getResults';
+import { getHomePageData } from '../utils/fetchMovies/getHomePageData';
 
 export default function Home({ weekTrending, dayTrending, topRated }) {
 	return (
