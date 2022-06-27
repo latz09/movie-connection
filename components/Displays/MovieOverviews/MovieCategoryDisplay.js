@@ -3,6 +3,7 @@ import { imageServer } from '../../../config';
 import Poster from './Poster';
 
 const MovieCategoryDisplay = ({ data }) => {
+
 	return (
 		<>
 			<div className='flex space-x-4 overflow-x-auto snap-y'>

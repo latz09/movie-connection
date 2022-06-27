@@ -3,7 +3,7 @@ const BiographyButton = ({ setIsBioOpen, isBioOpen}) => {
 		<button
 			onClick={() => {
 				{
-					!isBioOpen ? setIsBioOpen(true) : setIsBioOpen(false);
+				setIsBioOpen(!isBioOpen)
 				}
 			}}
 		>

@@ -2,14 +2,17 @@ import Poster from '../../Displays/MovieOverviews/Poster';
 import ActorBio from './ActorBio';
 import { useState } from 'react';
 import Biography from './Biography';
+import BackButton from '../../utils/BackButton';
 
 const ActorOverview = ({ bio }) => {
 	const [isBioOpen, setIsBioOpen] = useState(false);
-	console.log(bio);
-
+    
 	return (
 		<>
 			{' '}
+			<div className='text-center py-4'>
+				<BackButton />
+			</div>
 			<div className='grid justify-center mt-4'>
 				<div className='flex space-x-4'>
 					{' '}
@@ -30,7 +33,12 @@ const ActorOverview = ({ bio }) => {
 					/>
 				</div>
 			</div>
-            {isBioOpen && <Biography actorBiography={bio.bio}/>}
+			<div className='flex justify-center my-12 max-w-3xl mx-auto'>
+				{isBioOpen && <Biography actorBiography={bio.bio} />}
+			</div>
+            <div>
+
+            </div>
 		</>
 	);
 };

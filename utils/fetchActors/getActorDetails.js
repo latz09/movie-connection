@@ -1,5 +1,5 @@
-import { formatUrl } from "./formatUrl";
-import { server } from "../../config";
+import { formatUrl } from './formatUrl';
+import { server } from '../../config';
 
 export async function getActorBiography(actorId) {
 	const biographyResponse = await fetch(formatUrl(actorId, '', server));
@@ -12,8 +12,7 @@ export async function getActorBiography(actorId) {
 		bio: bioData.biography,
 		image: bioData.profile_path,
 		age: bioData.birthday,
-		birthPlace: bioData.place_of_birth
-
+		birthPlace: bioData.place_of_birth,
 	});
 }
 export async function getActorRelatedImages(actorId) {
@@ -22,6 +21,7 @@ export async function getActorRelatedImages(actorId) {
 
 	return images;
 }
+
 export async function getActorsMovies(actorId) {
 	const moviesResponse = await fetch(
 		formatUrl(actorId, 'movie_credits', server)
@@ -30,5 +30,7 @@ export async function getActorsMovies(actorId) {
 	const credits = await moviesResponse.json();
 	const movies = credits.cast;
 
-	return movies;
+	const moviesByPopularity = movies.sort((a, b) => b.popularity - a.popularity);
+
+	return moviesByPopularity;
 }
