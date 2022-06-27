@@ -12,6 +12,8 @@ const ActorDetails = (data) => {
 		setActorData(data.data);
 	}, [data]);
 
+	
+
 	return (
 		<div className='min-h-screen max-w-5xl mx-auto font-description'>
 			{actor ? (
@@ -19,15 +21,16 @@ const ActorDetails = (data) => {
 					<div>
 						<ActorOverview bio={actor.biography} />
 					</div>
-					<SectionHeading title={'also in...'} />
-					<div className='p-4'>
-						<MovieCategorDisplay data={actor.movies} />
+					<div>
+						<SectionHeading title={'also in...'} />
+					</div>
+					<div>
+						<MovieCategorDisplay data={actor.movies} id={'actor'} />
 					</div>
 				</div>
 			) : (
 				<Loading />
 			)}
-			
 		</div>
 	);
 };
@@ -50,7 +53,6 @@ export async function getStaticPaths() {
 }
 
 export default ActorDetails;
-
 
 /*  
 

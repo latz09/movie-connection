@@ -15,7 +15,7 @@ const TrendingMovies = ({ dataForWeek, dataForDay }) => {
 	const setToWeek = () => {
 		setTrenderFilter(dataForWeek);
 		setToggle('week');
-	};
+	}; 
 
 	return (
 		<div>
@@ -23,7 +23,7 @@ const TrendingMovies = ({ dataForWeek, dataForDay }) => {
 				title={`${toggle === 'week' ? 'Trending This Week' : 'Trending Today'}`}
 			/>
 			<TrendingFilter setDay={setToDay} setWeek={setToWeek} toggle={toggle} />
-			<MovieCategoryDisplay data={trenderFilter} />
+			<MovieCategoryDisplay data={trenderFilter} id={'trending'} />
 		</div>
 	);
 };

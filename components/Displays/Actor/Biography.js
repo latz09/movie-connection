@@ -1,8 +1,14 @@
-const Biography = ({ actorBiography }) => {
+const Biography = ({ actorBiography, setIsBioOpen }) => {
 	return (
-		<div className='prose-invert tracking-widest leading-6  px-5 py-4  m-4 rounded-lg bg-gray-800 bg-opacity-20'>
-			{' '}
+		<div className='prose prose-invert px-3 mx-auto'>
 			<p>{actorBiography}</p>
+			<button
+				onClick={() => {
+					setIsBioOpen(false);
+				}}
+			>
+				close
+			</button>
 		</div>
 	);
 };

@@ -8,10 +8,11 @@ const TopRatedMovies = ({ data }) => {
 				<SectionHeading title={'Through the years top rated'} />{' '}
 			</div>
 			<div>
-				<MovieCategoryDisplay data={data} />
+				<MovieCategoryDisplay data={data} id={'top-rated'} />
 			</div>
 		</> 
 	);
 };
 
 export default TopRatedMovies;
+ 

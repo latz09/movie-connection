@@ -6,14 +6,15 @@ import BackButton from '../../utils/BackButton';
 
 const ActorOverview = ({ bio }) => {
 	const [isBioOpen, setIsBioOpen] = useState(false);
-    
+
+
 	return (
 		<>
 			{' '}
 			<div className='text-center py-4'>
 				<BackButton />
 			</div>
-			<div className='grid justify-center mt-4'>
+			<div className='grid justify-center mt-4 '>
 				<div className='flex space-x-4'>
 					{' '}
 					<div>
@@ -33,12 +34,14 @@ const ActorOverview = ({ bio }) => {
 					/>
 				</div>
 			</div>
-			<div className='flex justify-center my-12 max-w-3xl mx-auto'>
-				{isBioOpen && <Biography actorBiography={bio.bio} />}
+			<div className='my-12 max-w-3xl mx-auto'>
+				{isBioOpen && (
+					<div className=''>
+						<Biography actorBiography={bio.bio} setIsBioOpen={setIsBioOpen}/>
+					</div>
+				)}
 			</div>
-            <div>
-
-            </div>
+			
 		</>
 	);
 };

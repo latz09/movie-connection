@@ -14,12 +14,12 @@ export default function Home({ weekTrending, dayTrending, topRated }) {
 			</div>
 			<div className='pb-12'>
 				{' '}
-				<TrendingMovies dataForWeek={weekTrending} dataForDay={dayTrending} />
+				<TrendingMovies dataForWeek={weekTrending} dataForDay={dayTrending}/>
 			</div>
 			<div>
 				<TopRatedMovies data={topRated} />
 			</div>
-		</div>
+		</div> 
 	);
 }
 

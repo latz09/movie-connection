@@ -8,7 +8,7 @@ const ActorBio = ({ name, age, birthPlace, setIsBioOpen, isBioOpen }) => {
 				<ul className='self-end space-y-2'>
 					<li>{age}</li>
 					<li>{birthPlace}</li>
-					<li className="bg-neon-blue py-1 text-center font-bold'">
+					<li className="'">
 						<BiographyButton
 							setIsBioOpen={setIsBioOpen}
 							isBioOpen={isBioOpen}

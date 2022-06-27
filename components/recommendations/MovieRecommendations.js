@@ -15,7 +15,7 @@ const MovieReccomendations = ({ data }) => {
 				<SectionHeading title={'You may also enjoy...'} />
 			</div>
 			<div>
-				<MovieCategoryDisplay data={recommendations} />
+				<MovieCategoryDisplay data={recommendations} id={'recommendations'} />
 			</div>
 		</div>
 	); 

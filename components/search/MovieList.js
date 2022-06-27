@@ -27,7 +27,7 @@ const MovieList = ({ movies, clearResults }) => {
 								/>
 							</a>
 						</Link>
-					) : (
+					) : ( 
 						<Link
 							href={
 								router.pathname.includes('movies')

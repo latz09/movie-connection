@@ -1,5 +1,5 @@
 import AllCastDisplay from '../../../components/Displays/Cast/AllCastDisplay';
-import Loading from '../../../components/utils/Loading'
+import Loading from '../../../components/utils/Loading';
 import { getMovieCredits } from '../../../utils/fetchMovies/getMovieCredits';
 import { getMovieDetails } from '../../../utils/fetchMovies/getMovieDetails';
 import { useState, useEffect } from 'react';
@@ -10,7 +10,6 @@ const CastPage = ({ castData, title }) => {
 	useEffect(() => {
 		setCast(castData);
 	}, [castData]);
-
 
 	return (
 		<div className='min-h-screen max-w-5xl mx-auto'>
@@ -32,7 +31,8 @@ export async function getStaticProps({ params }) {
 
 	return {
 		props: {
-			castData, title: movieData.title
+			castData,
+			title: movieData.title,
 		},
 	};
 }

@@ -1,9 +1,9 @@
-import Link from 'next/link'
+import Link from 'next/link';
 
-const CastLink = ({movieId}) => {
+const CastLink = ({ movieId }) => {
 	return (
 		<Link href={`/movies/cast/${movieId}`}>
-			<button className="btn-link">Cast</button>
+			<div className='btn-link'>Cast</div>
 		</Link>
 	);
 };

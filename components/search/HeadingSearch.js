@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import MovieList from './MovieList';
-import SearchBar from './SearchBar'; 
+import SearchBar from './SearchBar';
 import { server } from '../../config';
+import MovieCategoryDisplay from '../Displays/MovieOverviews/MovieCategoryDisplay';
 
 const HeadingSearch = () => {
 	const [searchValue, setSearchValue] = useState('');
@@ -9,7 +10,7 @@ const HeadingSearch = () => {
 	const inputRef = useRef(null);
 
 	const getMovieResults = async (value) => {
-		const url = `${server}/search/movie?api_key=a2f0798c92ead2ff4fa893d6a9430867&language=en-US&query=${value}`;
+		const url = `${server}/search/movie?api_key=${process.env.customKey}&language=en-US&query=${value}`;
 		const res = await fetch(url);
 		const data = await res.json();
 
@@ -29,17 +30,11 @@ const HeadingSearch = () => {
 	}, [searchValue]);
 
 	return (
-		<div className='pt-12'>
-			<div>
+		<div className='pt-12 pb-8'>
+			<div className="pb-6">
 				<SearchBar setSearchValue={setSearchValue} ref={inputRef} />
 			</div>
-			{results && (
-				<MovieList
-					movies={results}
-					clearResults={clearResults}
-					reff={inputRef}
-				/>
-			)}
+			{results && <MovieCategoryDisplay data={results} id={'search'} />}
 		</div>
 	);
 };
