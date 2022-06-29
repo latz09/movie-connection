@@ -3,7 +3,7 @@ import Layout from '../components/layout/Layout';
 
 function MyApp({ Component, pageProps }) {
 	return (
-		<div className='bg-[#0d0d0d] min-h-full text-gray-100 font-light tracking-wider font-logo'>
+		<div className='bg-[#0d0d0d] min-h-screen text-gray-100 font-light tracking-wider font-logo'>
 			<Layout>
 				<Component {...pageProps} />
 			</Layout>

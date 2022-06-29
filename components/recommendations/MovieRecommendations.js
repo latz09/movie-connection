@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+
 import MovieCategoryDisplay from '../Displays/MovieOverviews/MovieCategoryDisplay';
 import SectionHeading from '../utils/SectionHeading';
 
@@ -6,9 +7,9 @@ const MovieReccomendations = ({ data }) => {
 	const [recommendations, setRecommendations] = useState([]);
 
 	useEffect(() => {
-	  setRecommendations(data)
-	}, [data])
- 
+		setRecommendations(data);
+	}, [data]);
+
 	return (
 		<div className='pb-20'>
 			<div className='p-6'>
@@ -18,7 +19,7 @@ const MovieReccomendations = ({ data }) => {
 				<MovieCategoryDisplay data={recommendations} id={'recommendations'} />
 			</div>
 		</div>
-	); 
-}; 
+	);
+};
 
 export default MovieReccomendations;

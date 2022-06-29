@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import MovieList from './MovieList';
+
 import SearchBar from './SearchBar';
 import { server } from '../../config';
 import MovieCategoryDisplay from '../Displays/MovieOverviews/MovieCategoryDisplay';
@@ -26,15 +26,17 @@ const HeadingSearch = () => {
 	useEffect(() => {
 		inputRef.current.value.length > 2
 			? getMovieResults(inputRef.current.value)
-			: '';
+			: setResults([]);
 	}, [searchValue]);
 
 	return (
-		<div className='pt-12 pb-8'>
-			<div className="pb-6">
+		<div className=''>
+			<div className='pb-6'>
 				<SearchBar setSearchValue={setSearchValue} ref={inputRef} />
 			</div>
-			{results && <MovieCategoryDisplay data={results} id={'search'} />}
+			<div>
+				{results && <MovieCategoryDisplay data={results} id={'search'} clearResults={clearResults}/>}
+			</div>
 		</div>
 	);
 };

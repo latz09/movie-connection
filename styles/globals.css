@@ -7,29 +7,38 @@
 
 @layer components {
 	.results {
-		@apply flex-shrink-0 text-center shadow-lg cursor-pointer pb-4 hover:shadow-2xl hover:shadow-neon-blue;
-	}
-	.btn-filter-focused {
-		@apply bg-gray-900 p-1 sm:p-4 rounded m-4 text-neon-blue shadow-sm shadow-neon-blue border border-neon-blue;
+		@apply flex-shrink-0 text-center shadow-lg cursor-pointer transition duration-500 ease-linear sm:hover:-translate-y-1 sm:hover:scale-110 hover:border-b hover:mb-3;
 	}
 
 	.btn-filter {
-		@apply bg-neon-blue p-1 px-4 sm:px-4 rounded m-4 text-gray-800;
+		@apply bg-neon-blue p-1 px-4 sm:px-4 rounded m-4 text-gray-900;
+	}
+	.focused {
+		@apply bg-opacity-70 text-gray-300;
 	}
 	.btn-genre {
-		@apply bg-gray-900 rounded border border-gray-600 cursor-pointer py-1 hover:border-gray-300 hover:shadow hover:shadow-gray-100 text-center md:py-2;
+		@apply bg-black bg-opacity-30 cursor-pointer py-1  text-center md:py-2;
 	}
 	.movie-summary {
 		@apply text-gray-100 tracking-widest leading-8 md:leading-10 text-sm md:text-base p-3 rounded shadow shadow-gray-900 mt-4;
 	}
 	.btn-link {
-		@apply border border-neon-blue px-3 py-1 rounded hover:bg-gray-900 hover:opacity-70 cursor-pointer;
+		@apply border border-neon-blue px-3 py-1 rounded hover:opacity-80 cursor-pointer;
 	}
 	.container-cast {
-		@apply py-6 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center gap-8 ;
+		@apply py-6 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center gap-8;
 	}
 
 	.card-cast {
-		@apply p-3 border-neon-blue  border-opacity-10  bg-gray-800 bg-opacity-5 tracking-wide text-neon-blue cursor-pointer ;
+		@apply p-3 border-neon-blue  border-opacity-10  bg-gray-800 bg-opacity-5 tracking-wide text-neon-blue cursor-pointer;
+	}
+	.search-bar {
+		@apply bg-gray-900 border-0  w-full md:w-2/3 text-gray-200 font-medium  tracking-widest focus:ring-neon-blue ring-gray-400 ring-1 focus:bg-gray-800;
+	}
+	.scroll-overflow {
+		@apply flex space-x-4 overflow-x-scroll  scroll-smooth whitespace-nowrap scrollbar-hide;
+	}
+	.scroll-arrow {
+		@apply hidden sm:block p-1 rounded text-3xl text-gray-600 hover:text-gray-300 cursor-pointer;
 	}
 }

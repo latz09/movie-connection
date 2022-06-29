@@ -1,12 +1,9 @@
 import Logo from './Logo';
 
-
 const Navbar = () => {
 	return (
-		<div>
-			<div>
-				<Logo />
-			</div>
+		<div className=" border-opacity-10 p-2 mb-2 border-neon-blue">
+			<Logo />
 		</div>
 	);
 };

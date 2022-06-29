@@ -13,6 +13,7 @@ export async function getActorBiography(actorId) {
 		image: bioData.profile_path,
 		age: bioData.birthday,
 		birthPlace: bioData.place_of_birth,
+		id: bioData.id
 	});
 }
 export async function getActorRelatedImages(actorId) {

@@ -12,8 +12,6 @@ const ActorDetails = (data) => {
 		setActorData(data.data);
 	}, [data]);
 
-	
-
 	return (
 		<div className='min-h-screen max-w-5xl mx-auto font-description'>
 			{actor ? (
@@ -22,7 +20,7 @@ const ActorDetails = (data) => {
 						<ActorOverview bio={actor.biography} />
 					</div>
 					<div>
-						<SectionHeading title={'also in...'} />
+						<SectionHeading title={`${actor.biography.name} also in...`} />
 					</div>
 					<div>
 						<MovieCategorDisplay data={actor.movies} id={'actor'} />
@@ -36,7 +34,13 @@ const ActorDetails = (data) => {
 };
 
 export async function getStaticProps({ params }) {
-	const data = await getActorData(params.actorId);
+	let data;
+	try {
+		data = await getActorData(params.actorId);
+	} catch (error) {
+		console.log(error);
+		data = [];
+	}
 
 	return {
 		props: {

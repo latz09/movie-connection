@@ -9,7 +9,7 @@ const TrendingMovies = ({ dataForWeek, dataForDay }) => {
 
 	const setToDay = () => {
 		setTrenderFilter(dataForDay);
-		setToggle('day');
+		setToggle('day'); 
 	}; 
 
 	const setToWeek = () => {

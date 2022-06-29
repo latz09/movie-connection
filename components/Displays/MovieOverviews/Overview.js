@@ -1,7 +1,7 @@
 const Overview = ({ summary, genres }) => {
 	return (
 		<div>
-			<div className='grid grid-cols-3 md:grid-cols-5 py-2 md:py-4 gap-1 content-center'>
+			<div className='grid grid-cols-3 md:grid-cols-5 py-2 md:py-4 gap-2 content-center'>
 				{genres
 					? genres.map((genre) => (
 							<div key={genre.id} className='btn-genre'>

@@ -7,13 +7,12 @@ import Backdrop from './Backdrop';
 import MovieDescriptionLinks from './MovieDescriptionLinks';
 import Loading from '../../utils/Loading';
 
-const MovieDisplay = ({ data }) => {  
-	
+const MovieDisplay = ({ data }) => {
 	const [details, setDetails] = useState([]);
-	
+
 	useEffect(() => {
 		setDetails(data);
-	}, [data]); 
+	}, [data]);
 
 	return (
 		<div className='text-neon-blue'>
@@ -34,8 +33,8 @@ const MovieDisplay = ({ data }) => {
 								<Backdrop
 									src={`${imageServer}/w500/${details.backdrop}`}
 									alt={`{backdrop movie poster of ${details.title}`}
-									width={1200}
-									height={600}
+									width={1070}
+									height={470}
 									layout='intrinsic'
 								/>
 							</div>
@@ -50,17 +49,21 @@ const MovieDisplay = ({ data }) => {
 							''
 						) : (
 							<div className='md:text-xl pb-3'>
-								<MovieDescriptionLinks trailerId={details.trailerId} movieId={details.id}/>
+								<MovieDescriptionLinks
+									trailerId={details.trailerId}
+									movieId={details.id}
+								/>
 							</div>
 						)}
 
 						<Overview genres={details.genres} summary={details.overview} />
 					</div>
 				</div>
-			) : <Loading /> }
+			) : (
+				<Loading />
+			)}
 		</div>
 	);
 };
-
 
 export default MovieDisplay;

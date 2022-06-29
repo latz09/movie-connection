@@ -14,3 +14,6 @@ export const trendingServer_Day = `${server}/trending/movie/day?api_key=${dbKey}
 //Top Rated Server
 export const topRatedServer = `${server}/movie/top_rated?api_key=${dbKey}`
 
+//Upcoming server
+export const upcomingServer = `${server}/movie/upcoming?api_key=${dbKey}`
+

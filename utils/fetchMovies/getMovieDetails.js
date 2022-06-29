@@ -5,14 +5,15 @@ import { formatUrl } from './formatUrl';
 
 export const getMovieDetails = async (movieId) => {
 	let movieDetails;
-
+	let trailerId;
+	
 	const detailsResponse = await fetch(formatUrl(movieId, '', server));
 	const trailerResponse = await fetch(formatUrl(movieId, 'videos', server));
 
 	const detailsData = await detailsResponse.json();
 	const trailerData = await trailerResponse.json();
 
-	let trailerId;
+	
 	if (trailerData.results.length < 1) {
 		trailerId = null;
 	} else {
@@ -21,7 +22,7 @@ export const getMovieDetails = async (movieId) => {
 		)[0].key;
 	}
 
-	// const x = trailerData.results.filter((trailer) => trailer.site === 'YouTube');
+	
 
 	movieDetails = {
 		title: detailsData.title,

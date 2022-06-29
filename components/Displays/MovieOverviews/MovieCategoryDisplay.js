@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import { imageServer } from '../../../config';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
+import posterFiller from '../../../public/images/noPosterFiller.jpg';
 import Poster from './Poster';
 
-const MovieCategoryDisplay = ({ data, id }) => {
+const MovieCategoryDisplay = ({ data, id, clearResults }) => {
 	const slideLeft = () => {
 		let slider = document.getElementById(id);
 		slider.scrollLeft = slider.scrollLeft - 500;
@@ -13,28 +14,28 @@ const MovieCategoryDisplay = ({ data, id }) => {
 		let slider = document.getElementById(id);
 		slider.scrollLeft = slider.scrollLeft + 500;
 	};
-	console.log(data);
 
 	return (
-		<div className='relative flex items-center space-x-4 px-4'>
+		<div className='relative flex items-center'>
 			{' '}
 			<div className={`${data.length < 1 ? 'hidden' : 'block'}`}>
 				<AiOutlineArrowLeft
 					size={50}
-					className='hidden sm:block p-1 rounded text-3xl text-gray-600 hover:text-gray-300 cursor-pointer '
+					className='scroll-arrow'
 					onClick={slideLeft}
 				/>
 			</div>
-			<div
-				id={id}
-				className='flex space-x-4 overflow-x-scroll scroll scroll-smooth whitespace-nowrap sm:scrollbar-hide'
-			>
+			<div id={id} className='scroll-overflow'>
 				{data.map((movie) => (
-					<div key={movie.id} className='results snap-center'>
+					<div key={movie.id} className='results'>
 						<Link href={`/movies/${movie.id}`}>
-							<a>
+							<a onClick={clearResults}>
 								<Poster
-									src={`${imageServer}/w500/${movie.poster_path}`}
+									src={
+										movie.poster_path === null
+											? posterFiller
+											: `${imageServer}/w500/${movie.poster_path}`
+									}
 									alt={movie.title}
 									width={250}
 									height={320}
@@ -44,10 +45,11 @@ const MovieCategoryDisplay = ({ data, id }) => {
 					</div>
 				))}
 			</div>
+			{/* src={`${imageServer}/w500/${movie.poster_path}`}	 */}
 			<div className={`${data.length < 1 ? 'hidden' : 'block'}`}>
 				<AiOutlineArrowRight
 					size={50}
-					className='hidden sm:block p-1 rounded text-3xl text-gray-600 hover:text-gray-300 cursor-pointer  '
+					className='scroll-arrow '
 					onClick={slideRight}
 				/>
 			</div>

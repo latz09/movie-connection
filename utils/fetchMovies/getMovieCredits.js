@@ -9,3 +9,4 @@ export const getMovieCredits = async (movieId) => {
 
 	return credits;
 };
+ 

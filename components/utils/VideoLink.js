@@ -5,11 +5,11 @@ const VideoButton = () => {
 		<>
 			<button className='btn-link flex space-x-4 items-center'>
 				<span>Watch Clips</span>
-				<span className='text-3xl text-red-500'>
+				<span className='text-2xl text-red-500'>
 					<AiFillYoutube/>
 				</span>
 			</button>
-		</>
+		</> 
 	);
 };
 

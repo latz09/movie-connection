@@ -26,8 +26,16 @@ const CastPage = ({ castData, title }) => {
 };
 
 export async function getStaticProps({ params }) {
-	const castData = await getMovieCredits(params.movieId);
-	const movieData = await getMovieDetails(params.movieId);
+	let castData;
+	let movieData;
+	try {
+		castData = await getMovieCredits(params.movieId);
+		movieData = await getMovieDetails(params.movieId);
+	} catch (error) {
+		console.log(error)
+		castData = []
+		movieData = []
+	}
 
 	return {
 		props: {

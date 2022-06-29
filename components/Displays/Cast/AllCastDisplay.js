@@ -3,9 +3,6 @@ import SectionHeading from '../../utils/SectionHeading';
 import CastMemberCard from './CastMemberCard';
 import BackButton from '../../utils/BackButton';
 import { useState, useEffect } from 'react';
-{
-	/* //learn lazy load */
-}
 
 const AllCastDisplay = ({ castData, title }) => {
 	const [cast, setCast] = useState([]);
@@ -18,16 +15,14 @@ const AllCastDisplay = ({ castData, title }) => {
 		}
 	}, [castData]);
 
-	
-
 	return (
 		<>
 			{' '}
 			<div className='my-8'>
-				<SectionHeading title={title} />
 				<div className='text-center'>
 					<BackButton />
 				</div>
+				<SectionHeading title={title} />
 			</div>
 			<ul className='container-cast'>
 				{cast.map((actor) => (
