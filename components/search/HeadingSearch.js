@@ -31,19 +31,10 @@ const HeadingSearch = () => {
 
 	return (
 		<div className=''>
-			<div className=' sm:hidden'>
-				{results && (
-					<MovieCategoryDisplay
-						data={results}
-						id={'search'}
-						clearResults={clearResults}
-					/>
-				)}
-			</div>
 			<div className='pb-6'>
 				<SearchBar setSearchValue={setSearchValue} ref={inputRef} />
 			</div>
-			<div className='hidden sm:block'>
+			<div>
 				{results && (
 					<MovieCategoryDisplay
 						data={results}
