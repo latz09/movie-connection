@@ -13,7 +13,7 @@ const CastMemberCard = ({ name, picture, character }) => {
 					/>
 				</div>
 				<div className=''>
-					<h1 className='text-center border-b border-gray-800 p-1'>{name}</h1>
+					<h1 className='text-center border-b border-gray-600 p-1'>{name}</h1>
 					<div className='pt-4'>
 						<p className='text-xs text-gray-300 text-center'>{character}</p>
 					</div>

@@ -30,7 +30,7 @@
 	}
 
 	.card-cast {
-		@apply p-3 border-neon-blue  border-opacity-10  bg-gray-800 bg-opacity-5 tracking-wide text-neon-blue cursor-pointer;
+		@apply p-3 border-neon-blue  border-opacity-10  bg-gray-700 bg-opacity-5 tracking-wide text-neon-blue cursor-pointer;
 	}
 	.search-bar {
 		@apply bg-gray-900 border-0  w-full md:w-2/3 text-gray-200 font-medium  tracking-widest focus:ring-neon-blue ring-gray-400 ring-1 focus:bg-gray-800;
