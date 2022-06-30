@@ -36,7 +36,7 @@ const ActorOverview = ({ bio }) => {
 			<div className='my-12 max-w-3xl mx-auto'>
 				{isBioOpen && (
 					<div className=''>
-						<Biography actorBiography={bio.bio} setIsBioOpen={setIsBioOpen} />
+						<Biography actorBiography={bio.bio} />
 					</div>
 				)}
 			</div>
