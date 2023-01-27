@@ -3,7 +3,7 @@ import { imageServer } from '../../../config';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 import posterFiller from '../../../public/images/noPosterFiller.jpg';
 import Poster from './Poster';
-import { motion } from 'framer-motion';
+
 
 const MovieCategoryDisplay = ({ data, id, clearResults }) => {
 	const slideLeft = () => {
@@ -17,11 +17,9 @@ const MovieCategoryDisplay = ({ data, id, clearResults }) => {
 	};
 
 	return (
-		<motion.div
+		<div
 			className='grid place-items-center gap-8 '
-			initial={{ scale: 0, opacity: 0.5 }}
-			whileInView={{ scale: 1, opacity: 1 }}
-			transition={{ duration: 1.1 }}
+		
 		>
 			{' '}
 			<div id={id} className='scroll-overflow '>
@@ -60,7 +58,7 @@ const MovieCategoryDisplay = ({ data, id, clearResults }) => {
 					/>
 				</div>
 			</div>
-		</motion.div>
+		</div>
 	);
 };
 
