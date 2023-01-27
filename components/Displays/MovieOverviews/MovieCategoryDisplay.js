@@ -3,6 +3,7 @@ import { imageServer } from '../../../config';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 import posterFiller from '../../../public/images/noPosterFiller.jpg';
 import Poster from './Poster';
+import { motion } from 'framer-motion';
 
 const MovieCategoryDisplay = ({ data, id, clearResults }) => {
 	const slideLeft = () => {
@@ -16,16 +17,14 @@ const MovieCategoryDisplay = ({ data, id, clearResults }) => {
 	};
 
 	return (
-		<div className='relative flex items-center'>
+		<motion.div
+			className='grid place-items-center gap-8 '
+			initial={{ scale: 0, opacity: 0.5 }}
+			whileInView={{ scale: 1, opacity: 1 }}
+			transition={{ duration: 1.1 }}
+		>
 			{' '}
-			<div className={`${data.length < 1 ? 'hidden' : 'block'}`}>
-				<AiOutlineArrowLeft
-					size={50}
-					className='scroll-arrow'
-					onClick={slideLeft}
-				/>
-			</div>
-			<div id={id} className='scroll-overflow'>
+			<div id={id} className='scroll-overflow '>
 				{data.map((movie) => (
 					<div key={movie.id} className='results'>
 						<Link href={`/movies/${movie.id}`}>
@@ -45,15 +44,23 @@ const MovieCategoryDisplay = ({ data, id, clearResults }) => {
 					</div>
 				))}
 			</div>
-			{/* src={`${imageServer}/w500/${movie.poster_path}`}	 */}
-			<div className={`${data.length < 1 ? 'hidden' : 'block'}`}>
-				<AiOutlineArrowRight
-					size={50}
-					className='scroll-arrow '
-					onClick={slideRight}
-				/>
+			<div className='flex w-2/3 mx-auto justify-around '>
+				<div className={`${data.length < 1 ? 'hidden' : 'block'}`}>
+					<AiOutlineArrowLeft
+						size={50}
+						className='scroll-arrow'
+						onClick={slideLeft}
+					/>
+				</div>
+				<div className={`${data.length < 1 ? 'hidden' : 'block'}`}>
+					<AiOutlineArrowRight
+						size={50}
+						className='scroll-arrow '
+						onClick={slideRight}
+					/>
+				</div>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

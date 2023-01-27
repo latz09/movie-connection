@@ -18,11 +18,12 @@ const TrendingMovies = ({ dataForWeek, dataForDay }) => {
 	}; 
 
 	return (
-		<div>
+		<div className="grid gap-8">
+			<div className="gap-2 grid">
 			<SectionHeading
 				title={`${toggle === 'week' ? 'Trending This Week' : 'Trending Today'}`}
 			/>
-			<TrendingFilter setDay={setToDay} setWeek={setToWeek} toggle={toggle} />
+			<TrendingFilter setDay={setToDay} setWeek={setToWeek} toggle={toggle} /></div>
 			<MovieCategoryDisplay data={trenderFilter} id={'trending'} />
 		</div>
 	);

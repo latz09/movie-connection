@@ -1,6 +1,6 @@
 const SectionHeading = ({ title }) => {
 	return (
-		<div className="text-center text-3xl text-neon-blue pt-3 pb-6">
+		<div className="text-center text-3xl text-neon-blue font-sans font-semibold tracking-wider">
 			{' '}
 			<h1>{title}</h1>{' '}
 		</div>

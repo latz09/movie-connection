@@ -1,14 +1,17 @@
 import HeroBackground from './HeroBackground';
 import HeroOverlay from './HeroOverlay';
+import heroImage from '../../public/images/video-vector.svg';
+import Image from 'next/image';
 
 const Hero = () => {
 	return (
-		<div className='relative overflow-hidden h-52 md:h-96 max-w-6xl mx-auto'>
-			<div className='absolute inset-0'>
-				<HeroBackground />
+		<div className='h-[70vh] grid grid-cols-3 place-items-center gap-8'>
+			<div className=''>
+				<Image src={heroImage} alt='Movie image from Star Wars' />
 			</div>
-			<div className='flex flex-col place-items-center content-center'>
+			<div className='col-span-2  w-full h-full grid place-items-center'>
 				<HeroOverlay />
+				
 			</div>
 		</div>
 	);

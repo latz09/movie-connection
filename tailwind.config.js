@@ -9,7 +9,7 @@ module.exports = {
 	], 
 	theme: {
 		extend: {
-			fontFamily: {
+			fontFamily: { 
 				'logo' : ['Righteous', 'cursive'],
 				'description' : ['Roboto Mono', 'monospace'],
 				

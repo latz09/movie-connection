@@ -3,14 +3,14 @@ import SectionHeading from '../utils/SectionHeading';
 
 const TopRatedMovies = ({ data }) => {
 	return (
-		<>
-			<div className="pb-3">
+		<div className="gap-16 grid">
+			<div className="">
 				<SectionHeading title={'Through the years top rated'} />{' '}
 			</div>
 			<div>
 				<MovieCategoryDisplay data={data} id={'top-rated'} />
 			</div>
-		</> 
+		</div> 
 	);
 };
 

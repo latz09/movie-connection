@@ -12,11 +12,9 @@ export default function Home({
 	upcoming,
 }) {
 	return (
-		<div className='min-h-screen bg-[#0d0d0d] max-w-6xl mx-auto '>
+		<div className=' bg-[#0d0d0d] max-w-7xl mx-auto '>
 			<Hero />
-
-			<div className='grid gap-4 space-y-4 mt-4'>
-				<HeadingSearch />{' '}
+			<div className='grid gap-24 space-y-4 mt-4'>
 				<TrendingMovies dataForWeek={weekTrending} dataForDay={dayTrending} />
 				<UpcomingMovies data={upcoming} />
 				<TopRatedMovies data={topRated} />

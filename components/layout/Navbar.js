@@ -1,9 +1,14 @@
+import HeroOverlay, { ModalContainer } from '../Hero/HeroOverlay';
 import Logo from './Logo';
+
 
 const Navbar = () => {
 	return (
-		<div className=" border-opacity-10 p-2 mb-2 border-neon-blue">
+		<div className=' py-8 max-w-7xl mx-auto flex justify-between items-center' 
+	
+		>
 			<Logo />
+			<ModalContainer />
 		</div>
 	);
 };

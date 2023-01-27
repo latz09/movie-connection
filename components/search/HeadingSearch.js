@@ -30,11 +30,12 @@ const HeadingSearch = () => {
 	}, [searchValue]);
 
 	return (
-		<div className=''>
-			<div className='pb-6'>
+		<div className=' h-full flex flex-col  justify-between mt-4 lg:mt-8 '>
+			<div className=''>
 				<SearchBar setSearchValue={setSearchValue} ref={inputRef} />
 			</div>
-			<div>
+			{searchValue.length > 2 && 
+			<div className=''>
 				{results && (
 					<MovieCategoryDisplay
 						data={results}
@@ -42,9 +43,10 @@ const HeadingSearch = () => {
 						clearResults={clearResults}
 					/>
 				)}
-			</div>
+			</div>}
 		</div>
 	);
 };
 
 export default HeadingSearch;
+
