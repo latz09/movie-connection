@@ -22,9 +22,9 @@ const MovieCategoryDisplay = ({ data, id, clearResults }) => {
 		
 		>
 			{' '}
-			<div id={id} className='scroll-overflow '>
+			<div id={id} className='scroll-overflow  '>
 				{data.map((movie) => (
-					<div key={movie.id} className='results'>
+					<div key={movie.id} className='results '>
 						<Link href={`/movies/${movie.id}`}>
 							<a onClick={clearResults}>
 								<Poster
