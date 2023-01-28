@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const Hero = () => {
 	return (
-		<div className='h-[60vh] grid lg:grid-cols-3 place-items-center gap-8'>
+		<div className='h-[40vh] lg:h-[60vh] grid lg:grid-cols-3 place-items-center gap-8'>
 			<div className='w-1/2 order-1'>
 				<Image src={heroImage} alt='' />
 			</div>
