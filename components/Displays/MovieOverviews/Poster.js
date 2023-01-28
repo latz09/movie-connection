@@ -1,13 +1,16 @@
 import Image from 'next/image';
 import { imageServer } from '../../../config';
 import posterFiller from '../../../public/images/noPosterFiller.jpg';
-
+import { motion } from "framer-motion";
 
 const Poster = ({ src, alt, width, height }) => {
 	return (
-		<div
+		<motion.div
 			
-			className="grid place-items-center "
+			className="grid place-items-center  "
+			initial={{ opacity: 0, scale: .8 }}
+			whileInView={{ opacity: 1, scale: 1 }}
+			transition={{ duration: 1.2 }}
 		>
 			<Image
 				src={src === null ? posterFiller.src : `${imageServer}/w500/${src}`}
@@ -15,7 +18,7 @@ const Poster = ({ src, alt, width, height }) => {
 				width={width}
 				height={height}
 			/>
-		</div>
+		</motion.div>
 	);
 };
 

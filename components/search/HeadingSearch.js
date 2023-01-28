@@ -30,7 +30,7 @@ const HeadingSearch = () => {
 	}, [searchValue]);
 
 	return (
-		<div className=' h-full flex flex-col  justify-between mt-4 lg:mt-8 '>
+		<div className=' h-full grid gap-1 sm:flex flex-col  justify-between mt-4 lg:mt-8 '>
 			<div className=''>
 				<SearchBar setSearchValue={setSearchValue} ref={inputRef} />
 			</div>
