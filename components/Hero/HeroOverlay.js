@@ -21,7 +21,7 @@ export const ModalContainer = () => {
 	return (
 		<div className="text-cente">
 			<button
-				className='my-4 place-self-end bg-cyan-400 p-4 text-xl text-black font-sans rounded-2xl font-bold tracking-widest'
+				className='my-4 plac-self-end bg-cyan-400 p-4 text-xl text-black font-sans rounded-2xl font-bold tracking-widest'
 				onClick={() => {
 					setModalIsOpen(true);
 				}}

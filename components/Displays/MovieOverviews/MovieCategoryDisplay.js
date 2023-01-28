@@ -18,7 +18,7 @@ const MovieCategoryDisplay = ({ data, id, clearResults }) => {
 
 	return (
 		<div
-			className='grid place-items-center gap-8 '
+			className='grid place-items-center gap-8 max-w-7xl mx-auto'
 		
 		>
 			{' '}
