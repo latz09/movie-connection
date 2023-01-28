@@ -36,7 +36,7 @@
 		@apply text-white w-2/3 p-8 bg-black rounded ring-0 focus:ring-0  text-2xl placeholder-white font-sans tracking-widest ;
 	}
 	.scroll-overflow {
-		@apply flex space-x-16 overflow-x-scroll  scroll-smooth whitespace-nowrap scrollbar-hide;
+		@apply flex space-x-3 overflow-x-scroll  scroll-smooth whitespace-nowrap scrollbar-hide;
 	}
 	.scroll-arrow {
 		@apply hidden sm:block p-1 rounded text-3xl text-cyan-500 hover:text-cyan-100 cursor-pointer transition duration-700 hover:scale-110;
