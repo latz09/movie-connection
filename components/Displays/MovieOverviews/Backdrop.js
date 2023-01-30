@@ -9,7 +9,7 @@ export const MovieHero = ({ title, backdrop, runtime }) => {
 		<div className='relative w-full  h-[45vh] md:h-[70vh] '>
 			<Image
 				src={`${imageServer}/w500/${backdrop}`}
-				alt='Landscaping around a patio setting'
+				alt=''
 				layout='fill'
 				objectFit='cover'
 				objectPosition='center'
