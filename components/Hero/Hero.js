@@ -9,8 +9,8 @@ const Hero = () => {
 		<div className='h-[60vh] grid lg:grid-cols-3 place-items-center lg:gap-8 max-w-7xl mx-auto'>
 			<motion.div
 				className='order-2 lg:order-1 w-2/3 lg:w-full'
-				initial={{ opacity: 0.8, scale: 1.2 }}
-				animate={{ opacity: 0.4, scale: 0.8 }}
+				initial={{ opacity: 0.9, scale: 1.2 }}
+				animate={{ opacity: 0.7, scale: 0.9 }}
 				transition={{ duration: 2.9, delay: 0.5 }}
 			>
 				<motion.div
@@ -25,7 +25,7 @@ const Hero = () => {
 				className='order-1 lg:order-2 lg:col-span-2  w-full h-full grid place-items-center'
 				initial={{ opacity: 0.6, scale: 0.8 }}
 				animate={{ opacity: 1, scale: 1 }}
-				transition={{ duration: 1.3, delay: 0.2 }}
+				transition={{ duration: 2, delay: 0.2 }}
 			>
 				<HeroOverlay />
 			</motion.div>
