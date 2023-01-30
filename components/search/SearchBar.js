@@ -6,7 +6,7 @@ const SearchBar = (props, ref) => {
 			<input
 				type='text'
 				placeholder='search any movie ...'
-				className='search-bar '
+				className='search-bar m-4 '
 				ref={ref}
 				onChange={() => {
 					props.setSearchValue(ref.current.value);

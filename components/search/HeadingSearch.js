@@ -30,8 +30,10 @@ const HeadingSearch = () => {
 	}, [searchValue]);
 
 	return (
-		<div className=' h-full grid gap-1 sm:flex flex-col  justify-around mt-2 lg:mt-8 '>
-			
+		<div className=' grid gap-4 max-h-[70vh]'>
+			<div className='w-full'>
+				<SearchBar setSearchValue={setSearchValue} ref={inputRef} />
+			</div>
 			{searchValue.length > 2 && 
 			<div className=' '>
 				{results && (
@@ -42,9 +44,7 @@ const HeadingSearch = () => {
 					/>
 				)}
 			</div>}
-			<div className=''>
-				<SearchBar setSearchValue={setSearchValue} ref={inputRef} />
-			</div>
+			
 		</div>
 	);
 };
