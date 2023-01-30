@@ -27,7 +27,7 @@ function MyApp({ Component, pageProps, router }) {
 						animate='visible'
 						exit='exit'
 					>
-						<Component {...pageProps} /> <Component {...pageProps} />{' '}
+						 <Component {...pageProps} />{' '}
 					</motion.div>
 				</AnimatePresence>
 			</Layout>
