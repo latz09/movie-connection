@@ -24,11 +24,11 @@ const ModalOverlay = ({ children, setModalIsOpen }) => {
 				initial='hidden'
 				animate='visible'
 				exit='exit'
-				className='fixed top-0 left-0  w-full h-full  z-10 bg-dark backdrop-blur '
+				className='fixed top-0 left-0  w-full h-full  z-10 bg-dark/60 backdrop-blur '
 			>
 				<div className=" flex flex-col  ">
 					<div
-						className='text-3xl	grid place-items-end  p-2 cursor-pointer  '
+						className='text-3xl	grid place-items-end  cursor-pointer max-w-4xl w-full py-4 mx-auto '
 						onClick={() => {
 							setModalIsOpen(false);
 						}}

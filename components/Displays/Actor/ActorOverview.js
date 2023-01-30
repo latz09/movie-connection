@@ -3,10 +3,11 @@ import ActorBio from './ActorBio';
 import { useState } from 'react';
 import Biography from './Biography';
 import BackButton from '../../utils/BackButton';
+import ModalOverlay from '../../modal/ModalOverlay';
 
 const ActorOverview = ({ bio }) => {
-	const [isBioOpen, setIsBioOpen] = useState(false);
-
+	console.log(bio)
+	const [modalIsOpen, setModalIsOpen] = useState(false);
 	return (
 		<>
 			{' '}
@@ -28,17 +29,10 @@ const ActorOverview = ({ bio }) => {
 						name={bio.name}
 						age={bio.age}
 						birthPlace={bio.birthPlace}
-						setIsBioOpen={setIsBioOpen}
-						isBioOpen={isBioOpen}
+						bio={bio}
+						modalCommands={{ modalIsOpen, setModalIsOpen }}
 					/>
 				</div>
-			</div>
-			<div className='my-12 max-w-3xl mx-auto'>
-				{isBioOpen && (
-					<div className=''>
-						<Biography actorBiography={bio.bio} />
-					</div>
-				)}
 			</div>
 		</>
 	);

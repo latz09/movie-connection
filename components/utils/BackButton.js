@@ -5,7 +5,7 @@ const BackButton = () => {
 	let router = useRouter();
 	return (
 		<button
-			className='text-2xl text-neon-blue opacity-70 hover:opacity-100'
+			className='text-5xl text-primary'
 			onClick={() => {
 				router.back(); 
 			}}

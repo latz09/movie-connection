@@ -3,17 +3,22 @@ import { getMovieDetails } from '../../utils/fetchMovies/getMovieDetails';
 import MovieDisplay from '../../components/Displays/MovieOverviews/MovieDisplay';
 import MovieReccomendations from '../../components/recommendations/MovieRecommendations';
 import { getHomePageData } from '../../utils/fetchMovies/getHomePageData';
+import { useState, useEffect } from 'react';
 
-const moviePage = ({ movieData, recommendations }) => {
+const MoviePage = ({ movieData, recommendations }) => {
+	
+console.log(movieData)
+
+
 	return (
 		<div className='mx-auto min-h-screen'>
 			<div className=''> 
 				<MovieDisplay data={movieData} />
 			</div>
 			<div className='mx-auto max-w-7xl md:px-2'>
-				{recommendations && (
+				{/* {recommendations && (
 					<MovieReccomendations data={recommendations.results} />
-				)}
+				)} */}
 			</div>
 		</div>
 	);
@@ -45,4 +50,4 @@ export async function getStaticPaths() {
 	};
 }
 
-export default moviePage;
+export default MoviePage;

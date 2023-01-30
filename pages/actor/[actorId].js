@@ -13,9 +13,9 @@ const ActorDetails = (data) => {
 	}, [data]);
 
 	return (
-		<div className=' max-w-5xl mx-auto font-description'>
+		<div className='min-h-screen max-w-7xl mx-auto font-description'>
 			{actor ? (
-				<div>
+				<div className="grid gap-8">
 					<div  id='top-bio'>
 						<ActorOverview bio={actor.biography} />
 					</div>

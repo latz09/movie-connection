@@ -18,8 +18,8 @@ const AllCastDisplay = ({ castData, title }) => {
 	return (
 		<>
 			{' '}
-			<div className='my-8'>
-				<div className='text-center'>
+			<div className='grid'>
+				<div className='text-center my-8'>
 					<BackButton />
 				</div>
 				<SectionHeading title={title} />

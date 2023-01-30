@@ -10,7 +10,7 @@ import { motion } from 'framer-motion';
 
 const MovieDisplay = ({ data }) => {
 	const [details, setDetails] = useState([]);
-
+	
 	useEffect(() => {
 		setDetails(data);
 	}, [data]);
@@ -26,12 +26,14 @@ const MovieDisplay = ({ data }) => {
 								runtime={details.runtime}
 								backdrop={details.poster}
 							/>
+							
 						) : (
 							<MovieHero
 								title={details.title}
 								runtime={details.runtime}
 								backdrop={details.backdrop}
 							/>
+						
 						)}
 					</div>
 
