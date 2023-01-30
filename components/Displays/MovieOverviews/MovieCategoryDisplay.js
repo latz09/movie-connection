@@ -17,7 +17,7 @@ const MovieCategoryDisplay = ({ data, id, clearResults }) => {
 	};
 
 	return (
-		<div className='relative flex space-x-2 sm:space-x-8 items-center max-w-7xl mx-auto'>
+		<div className='relative flex sm:space-x-8 items-center max-w-7xl mx-auto'>
 			{' '}
 			<motion.div
 				className={`${data.length < 1 ? 'hidden' : 'block'}`}

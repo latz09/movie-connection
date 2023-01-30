@@ -15,14 +15,16 @@ const ActorDetails = (data) => {
 	return (
 		<div className='min-h-screen max-w-7xl mx-auto font-description'>
 			{actor ? (
-				<div className="grid gap-8">
-					<div  id='top-bio'>
-						<ActorOverview bio={actor.biography} />
+				<div className=''>
+					<div className='grid gap-8'>
+						<div id='top-bio'>
+							<ActorOverview bio={actor.biography} />
+						</div>
+						<div className="my-2 md:my-4">
+							<SectionHeading title={`${actor.biography.name} also in...`} />
+						</div>
 					</div>
-					<div>
-						<SectionHeading title={`${actor.biography.name} also in...`} />
-					</div>
-					<div>
+					<div className="mt-8">
 						<MovieCategorDisplay data={actor.movies} id={'actor'} />
 					</div>
 				</div>

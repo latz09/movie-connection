@@ -35,7 +35,7 @@ const ModalOverlay = ({ children, setModalIsOpen }) => {
 					>
 						X
 					</div>
-					<div className=' '>{children}</div>
+					<div className=''>{children}</div>
 				</div>
 			</motion.div>
 		</AnimatePresence>

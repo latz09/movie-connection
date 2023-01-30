@@ -16,9 +16,9 @@ console.log(movieData)
 				<MovieDisplay data={movieData} />
 			</div>
 			<div className='mx-auto max-w-7xl md:px-2'>
-				{/* {recommendations && (
+				{recommendations && (
 					<MovieReccomendations data={recommendations.results} />
-				)} */}
+				)}
 			</div>
 		</div>
 	);
