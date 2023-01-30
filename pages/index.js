@@ -12,15 +12,16 @@ export default function Home({
 	upcoming,
 }) {
 	return (
-		<div className=' bg-[#0d0d0d] max-w-7xl mx-auto '>
-		
-			<div className='grid gap-24 space-y-4'>
-			<Hero />
-				<TrendingMovies dataForWeek={weekTrending} dataForDay={dayTrending} />
-				<UpcomingMovies data={upcoming} />
-				<TopRatedMovies data={topRated} />
+		<div className=' bg-[#0d0d0d]'>
+			<div className='grid gap-8'>
+				<Hero />
+				<div className='grid gap-16'>
+					<TrendingMovies dataForWeek={weekTrending} dataForDay={dayTrending} />
+					<UpcomingMovies data={upcoming} />
+					<TopRatedMovies data={topRated} />
+				</div>
 			</div>
-	</div>
+		</div>
 	);
 }
 

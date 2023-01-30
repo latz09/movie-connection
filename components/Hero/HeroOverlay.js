@@ -4,7 +4,7 @@ import SearchContent from '../modal/SearchContent';
 
 const HeroOverlay = () => {
 	return (
-		<div className='grid gap-3 text-center'>
+		<div className='grid gap-3 text-center '>
 			<div className='grid text-3xl lg:text-5xl gap-2'>
 				<span>Explore millions of movies</span>
 				<span className='text-xl lg:text-3xl text-cyan-200'>Discover Hidden Gems</span>
@@ -21,7 +21,7 @@ export const ModalContainer = () => {
 	return (
 		<div className="text-cente">
 			<button
-				className='my-4 plac-self-end bg-cyan-400 p-4 text-xl text-black font-sans rounded-2xl font-bold tracking-widest'
+				className='my-4 plac-self-end bg-cyan-800 py-4 px-8 text-xl text-white font-sans rounded font-bold tracking-widest'
 				onClick={() => {
 					setModalIsOpen(true);
 				}}

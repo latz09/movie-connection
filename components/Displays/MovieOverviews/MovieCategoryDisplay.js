@@ -16,7 +16,7 @@ const MovieCategoryDisplay = ({ data, id, clearResults }) => {
 	};
 
 	return (
-		<div className='relative flex items-center'>
+		<div className='relative flex items-center max-w-6xl mx-auto'>
 			{' '}
 			<div className={`${data.length < 1 ? 'hidden' : 'block'}`}>
 				<AiOutlineArrowLeft
