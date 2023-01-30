@@ -6,13 +6,9 @@ import { getHomePageData } from '../../utils/fetchMovies/getHomePageData';
 import { useState, useEffect } from 'react';
 
 const MoviePage = ({ movieData, recommendations }) => {
-	
-console.log(movieData)
-
-
 	return (
 		<div className='mx-auto min-h-screen'>
-			<div className=''> 
+			<div className=''>
 				<MovieDisplay data={movieData} />
 			</div>
 			<div className='mx-auto max-w-7xl md:px-2'>

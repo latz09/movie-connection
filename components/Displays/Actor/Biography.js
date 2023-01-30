@@ -6,7 +6,7 @@ const Biography = ({ actorBiography }) => {
 			{actorBiography === '' ? (
 				<p>No biography available</p>
 			) : (
-				<div className="bg-dark p-8 min-h-full">
+				<div className="bg-dark p-8 overflow-y-scroll scrollbar-hide">
 					<p className="">{actorBiography}</p>
 				</div>
 			)}
