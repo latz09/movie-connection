@@ -13,7 +13,7 @@ const ActorDetails = (data) => {
 	}, [data]);
 
 	return (
-		<div className='min-h-screen max-w-5xl mx-auto font-description'>
+		<div className=' max-w-5xl mx-auto font-description'>
 			{actor ? (
 				<div>
 					<div  id='top-bio'>
