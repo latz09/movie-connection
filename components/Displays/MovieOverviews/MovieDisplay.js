@@ -16,7 +16,7 @@ const MovieDisplay = ({ data }) => {
 	}, [data]);
 
 	return (
-		<div className='text-neon-blue'>
+		<div className=''>
 			{details ? (
 				<div>
 					<div className='relative'>
@@ -35,11 +35,11 @@ const MovieDisplay = ({ data }) => {
 						)}
 					</div>
 
-					<div className='mx-auto max-w-5xl p-2'>
+					<div className='mx-auto max-w-7xl my-8 grid gap-4 '>
 						{details.trailerId === null ? (
 							''
 						) : (
-							<div className='md:text-xl pb-3'>
+							<div className='md:text-xl '>
 								<MovieDescriptionLinks
 									trailerId={details.trailerId}
 									movieId={details.id}

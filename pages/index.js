@@ -12,7 +12,7 @@ export default function Home({
 	upcoming,
 }) {
 	return (
-		<div className=' bg-[#0d0d0d]'>
+		<div className=' '>
 			<div className='grid gap-8'>
 				<Hero />
 				<div className='grid gap-16'>

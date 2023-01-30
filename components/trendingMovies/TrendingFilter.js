@@ -1,6 +1,6 @@
 const TrendingFilter = ({ setDay, setWeek, toggle }) => {
 	return (
-		<div className='flex space-x-5 justify-center text-xl '>
+		<div className='flex space-x-8 justify-center text-xl '>
 			<button
 				className={`${toggle === 'day' ? 'btn-filter focused' : 'btn-filter'} `}
 				onClick={setDay}

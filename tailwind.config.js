@@ -14,10 +14,14 @@ module.exports = {
 				'description' : ['Roboto Mono', 'monospace'],
 				
 			},
-			colors: {
-				'neon-blue' : '#00C5C8',
-			}
+	
 		},
+		colors: {
+			'dark': '#031528',
+			'primary' : '#DCA11D',
+			'light': '#DDF2FF',
+	
+		}
 	},
 	plugins: [
 		require('@tailwindcss/forms'),

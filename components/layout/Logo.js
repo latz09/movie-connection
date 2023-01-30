@@ -8,7 +8,7 @@ const Logo = () => {
 			<div className=' text-neon-blue font-logo tracking-widest cursor-pointer uppercase'>
 				<Link href={'/'}>
 					<div className='flex items-center space-x-2 '>
-						<MdOutlineMovieCreation className='text-5xl ' />
+						<MdOutlineMovieCreation className='text-5xl text-primary ' />
 						<h1 className='text-xl tracking-widest hover:opacity-80 transition duration-300'>
 							Movie Connection
 						</h1>

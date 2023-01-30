@@ -10,7 +10,7 @@ const moviePage = ({ movieData, recommendations }) => {
 			<div className=''> 
 				<MovieDisplay data={movieData} />
 			</div>
-			<div className='mx-auto max-w-4xl md:px-2'>
+			<div className='mx-auto max-w-7xl md:px-2'>
 				{recommendations && (
 					<MovieReccomendations data={recommendations.results} />
 				)}

@@ -11,8 +11,8 @@ const MovieReccomendations = ({ data }) => {
 	}, [data]);
 
 	return (
-		<div className='pb-20'>
-			<div className='p-6'>
+		<div className='grid gap-8'>
+			<div className=''>
 				<SectionHeading title={'You may also enjoy...'} />
 			</div>
 			<div>

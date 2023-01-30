@@ -3,15 +3,6 @@ import { imageServer } from '../../../config';
 import Image from 'next/image';
 import DisplayHeading from './DisplayHeading';
 
-const Backdrop = ({ src, alt, layout, width, height }) => {
-	return (
-		<Image src={src} alt={alt} width={width} height={height} layout={layout} />
-	);
-};
-
-export default Backdrop;
-
-// title, backdrop(movie poster),
 
 export const MovieHero = ({ title, backdrop, runtime }) => {
 	return (
@@ -25,7 +16,7 @@ export const MovieHero = ({ title, backdrop, runtime }) => {
 				
 				priority='true'
 			/>
-			<div className='relative h-full bg-black bg-opacity-60'>
+			<div className='relative grid place-items-end w-full h-full bg-gradient-to-t from-dark/90 via-dark/50 to-dark/20'>
 				<DisplayHeading title={title} runtime={runtime} />
 			</div>
 		</div>
