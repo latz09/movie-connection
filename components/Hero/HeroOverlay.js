@@ -18,7 +18,7 @@ const HeroOverlay = () => {
 
 export default HeroOverlay;
 
-export const ModalContainer = () => {
+export const  ModalContainer = () => {
 	const [modalIsOpen, setModalIsOpen] = useState(false);
 	return (
 		<div className=''>
@@ -32,7 +32,7 @@ export const ModalContainer = () => {
 			</button>
 			{modalIsOpen && (
 				<ModalOverlay setModalIsOpen={setModalIsOpen}>
-					<SearchContent />
+					<SearchContent setModalIsOpen={setModalIsOpen}/>
 				</ModalOverlay>
 			)}
 		</div>

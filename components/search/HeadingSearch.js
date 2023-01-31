@@ -4,7 +4,7 @@ import SearchBar from './SearchBar';
 import { server } from '../../config';
 import MovieCategoryDisplay from '../Displays/MovieOverviews/MovieCategoryDisplay';
 
-const HeadingSearch = () => {
+const HeadingSearch = ({ setModalIsOpen }) => {
 	const [searchValue, setSearchValue] = useState('');
 	const [results, setResults] = useState([]);
 	const inputRef = useRef(null);
@@ -21,6 +21,9 @@ const HeadingSearch = () => {
 		setResults([]);
 		setSearchValue('');
 		inputRef.current.value = '';
+		setTimeout(() => {
+			setModalIsOpen(false);
+		}, 1250);
 	};
 
 	useEffect(() => {
@@ -34,20 +37,19 @@ const HeadingSearch = () => {
 			<div className='w-full'>
 				<SearchBar setSearchValue={setSearchValue} ref={inputRef} />
 			</div>
-			{searchValue.length > 2 && 
-			<div className=' '>
-				{results && (
-					<MovieCategoryDisplay
-						data={results}
-						id={'search'}
-						clearResults={clearResults}
-					/>
-				)}
-			</div>}
-			
+			{searchValue.length > 2 && (
+				<div className='border border-primary '>
+					{results && (
+						<MovieCategoryDisplay
+							data={results}
+							id={'search'}
+							clearResults={clearResults}
+						/>
+					)}
+				</div>
+			)}
 		</div>
 	);
 };
 
 export default HeadingSearch;
-

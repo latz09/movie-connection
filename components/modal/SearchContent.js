@@ -1,9 +1,9 @@
 import HeadingSearch from "../search/HeadingSearch";
 
-const SearchContent = () => {
+const SearchContent = ({setModalIsOpen}) => {
 	return (
 		<div className=" h-full grid  ">
-			<HeadingSearch />
+			<HeadingSearch setModalIsOpen={setModalIsOpen}/>
 		</div>
 	);
 };
