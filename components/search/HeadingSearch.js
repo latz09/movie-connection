@@ -38,7 +38,7 @@ const HeadingSearch = ({ setModalIsOpen }) => {
 				<SearchBar setSearchValue={setSearchValue} ref={inputRef} />
 			</div>
 			{searchValue.length > 2 && (
-				<div className='border border-primary '>
+				<div className=' '>
 					{results && (
 						<MovieCategoryDisplay
 							data={results}
