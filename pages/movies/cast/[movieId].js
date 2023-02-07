@@ -12,7 +12,7 @@ const CastPage = ({ castData, title }) => {
 	}, [castData]);
 
 	return (
-		<div className=' max-w-7xl mx-auto'>
+		<div className=' max-w-7xl mx-auto min-h-screen'>
 			{cast ? (
 				<div>
 					{' '}
